@@ -31,14 +31,14 @@ interface TypographyProps {
 type TSizeClassNames = Record<SizeOptions, string>;
 
 const sizeClassNames: TSizeClassNames = {
-  h1: 'font-normal text-88x lg:text-380x text-center text-white font-cameraPlain',
-  h2: 'text-60x lg:text-200x text-center text-white font-cameraPlain',
-  h3: 'text-white text-40x lg:text-120x text-center font-cameraPlain ',
-  h4: 'text-24x lg:text-80x text-center text-white font-spykDisplay',
+  h1: 'font-normal text-88x lg:text-380x text-center text-white',
+  h2: 'text-60x lg:text-200x text-center text-white',
+  h3: 'text-white text-40x lg:text-120x text-center ',
+  h4: 'text-24x lg:text-80x text-center text-white',
   small: 'text-base',
   strong: 'text-lg font-medium',
   label: '',
-  paragraph: 'text-base font-diaType text-14x lg:text-18x'
+  paragraph: 'text-base text-white text-14x lg:text-18x'
 };
 
 const Text = ({

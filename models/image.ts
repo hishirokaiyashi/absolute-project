@@ -1,0 +1,2 @@
+export const imagePlaceholder =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAEUlEQVR42mO8+Z8BAzAOZUEAOu8Se8/XwOIAAAAASUVORK5CYII=';

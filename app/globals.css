@@ -7,7 +7,11 @@
   --secondary-text-hex: #ECECEC;
   --container-px: 1440px;
 
+  --space-xxxl: 3.375rem; /* 54px */
+  --space-xxl: 2.5rem; /* 40px */
+  --space-xl: 2rem; /* 32px */
   --space-l: 1.25rem; /* 20px */
+
 }
 
 @layer base {

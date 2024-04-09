@@ -1,7 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 const spaces = {
-  'nourish-l': 'var(--space-l)'
+  'absoluteAgentur-l': 'var(--space-l)',
+  'absoluteAgentur-xl': 'var(--space-xl)',
+  'absoluteAgentur-xxl': 'var(--space-xxl)',
+  'absoluteAgentur-xxxl': 'var(--space-xxxl)'
 };
+// --space-xxxl: 3.375rem; /* 54px */
+//   --space-xxl: 2.5rem; /* 40px */
+//   --space-xl: 2rem; /* 32px */
+//   --space-l: 1.25rem; /* 20px */
 
 module.exports = {
   content: [
@@ -10,6 +17,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gap:{
+        '40x': '2.5rem',
+        '88x': '5.5rem'
+      },
       colors: {
         primary: 'var(--primary-hex)',
         secondary: 'var(--secondary-hex)'
