@@ -5,3 +5,10 @@ export interface IPageProps {
     lang: Locale;
   };
 }
+
+
+export interface IDictionary {
+  [key: string]: {
+    [nestedKey: string]: string;
+  };
+}

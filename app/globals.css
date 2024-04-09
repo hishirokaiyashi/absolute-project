@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-text-hex: #1C1C1C;
+  --secondary-text-hex: #ECECEC;
+  --container-px: 1440px;
+
+  --space-l: 1.25rem; /* 20px */
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overscroll-behavior: none;
+}
