@@ -1,0 +1,17 @@
+{
+  "common": {
+    "more": "more",
+    "welcome": "Welcome"
+  },
+  "cookie": {
+    "title": "",
+    "content": "We use cookies to operate our website. Certain cookies are technically necessary and are sent automatically when you open the website. Other cookies to increase convenience, analyze usage and marketing cookies are only activated with your consent.",
+    "accept-functional-label": "Accept necessary cookies",
+    "accept-all-label": "Accept all cookies"
+  },
+  "not-found": {
+    "title": "Oh dear, this page was not found!",
+    "description": "The page you were looking for could not be found. It may have been removed, renamed, or did not exist in the first place.",
+    "back-to-home": "Back to home page"
+  }
+}

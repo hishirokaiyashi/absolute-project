@@ -1,0 +1,17 @@
+{
+  "common": {
+    "more": "mehr",
+    "welcome": "Willkommen"
+  },
+  "cookie": {
+    "title": "",
+    "content": "Wir verwenden Cookies, um unsere Website zu betreiben. Bestimmte Cookies sind technisch notwendig und werden automatisch gesendet, wenn Sie die Website öffnen. Andere Cookies zur Erhöhung des Komforts, zur Analyse der Nutzung und Marketing-Cookies werden nur mit Ihrer Zustimmung aktiviert.",
+    "accept-functional-label": "Notwendige Cookies akzeptieren",
+    "accept-all-label": "Alle Cookies akzeptieren"
+  },
+  "not-found": {
+    "title": "Ohje, diese Seite wurde nicht gefunden!",
+    "description": "Die gesuchte Seite konnte nicht gefunden werden. Sie wurde möglicherweise entfernt, umbenannt oder existierte von vornherein nicht.",
+    "back-to-home": "Zur Startseite"
+  }
+}
