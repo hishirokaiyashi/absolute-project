@@ -6,7 +6,6 @@ import { HTMLAttributes, ReactNode, forwardRef } from 'react';
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   container: boolean;
- 
 }
 
 const Section = forwardRef<HTMLDivElement, IProps>(
@@ -19,7 +18,7 @@ const Section = forwardRef<HTMLDivElement, IProps>(
         className={cn(
           `box-border relative`,
           container && clsContainer,
-         className
+          className
         )}
       >
         {children}

@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import Image from "next/image";
-import { IClassName } from "@/models/interfaces";
-import { imagePlaceholder } from "@/models/image";
-import { twMerge } from "tailwind-merge";
+import Image from 'next/image';
+import { IClassName } from '@/models/interfaces';
+import { imagePlaceholder } from '@/models/image';
+import { twMerge } from 'tailwind-merge';
 
 interface ImageProps extends IClassName {
   src: string;
@@ -16,8 +16,8 @@ interface ImageProps extends IClassName {
 }
 
 const Images = ({
-  className = "",
-  alt = "",
+  className = '',
+  alt = '',
   width,
   height,
   fill = true,
@@ -26,7 +26,7 @@ const Images = ({
   return (
     <>
       {fill ? (
-        <div className={twMerge("relative", className)}>
+        <div className={twMerge('relative', className)}>
           {props.src && (
             <Image
               alt={alt}
@@ -35,7 +35,7 @@ const Images = ({
               {...props}
               fill
               quality={100}
-              className="absolute w-full h-full object-cover"
+              className="absolute object-cover w-full h-full"
             />
           )}
         </div>

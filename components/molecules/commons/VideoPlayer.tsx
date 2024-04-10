@@ -1,8 +1,8 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import ReactPlayer from "react-player/vimeo";
-import { twMerge } from "tailwind-merge";
-import { useEventListener, useIsClient } from "usehooks-ts";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import ReactPlayer from 'react-player/vimeo';
+import { twMerge } from 'tailwind-merge';
+import { useEventListener, useIsClient } from 'usehooks-ts';
 interface IProps {
   url: string;
   objectPosition?: { x: number; y: number };
@@ -17,7 +17,7 @@ const VideoPlayer = ({
     y: 50,
   },
   aspectRatio = 16 / 9,
-  className = "",
+  className = '',
   isPlaying = true,
 }: IProps) => {
   const [videoSize, setVideoSize] = useState({
@@ -58,10 +58,13 @@ const VideoPlayer = ({
     }
   }, [ref, aspectRatio, objectPosition.x, objectPosition.y]);
 
-  useEventListener("resize", handleResize);
+  useEventListener('resize', handleResize);
   return (
     <div
-      className={twMerge("absolute w-full h-full top-0 overflow-hidden", className)}
+      className={twMerge(
+        'absolute w-full h-full top-0 overflow-hidden',
+        className
+      )}
       ref={ref}
     >
       {isClient && (
@@ -73,10 +76,10 @@ const VideoPlayer = ({
           loop={true}
           muted
           style={{
-            position: "absolute",
+            position: 'absolute',
             top: videoSize.top,
             left: videoSize.left,
-            pointerEvents: "none",
+            pointerEvents: 'none',
           }}
           playing={isPlaying}
         />

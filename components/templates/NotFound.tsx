@@ -1,4 +1,3 @@
-
 import { IDictionary } from '@/models/interfaces';
 import Link from 'next/link';
 import { memo } from 'react';
@@ -15,7 +14,7 @@ const NotFoundTemplate = ({ dictionary }: Props) => {
         <h3 className="text-xl font-bold lg:text-[34px] lg:leading-snug mb-5 tracking-wide">
           {dictionary['not-found'].title}
         </h3>
-        <div className="text-base lg:text-xl tracking-wide">
+        <div className="text-base tracking-wide lg:text-xl">
           {dictionary['not-found'].description}
         </div>
         <Link

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
-type SizeOptions =
+export type SizeOptions =
   | 'h1'
   | 'h2'
   | 'h3'
@@ -21,7 +21,7 @@ export type TElemnts =
   | 'div'
   | 'small';
 
-interface TypographyProps {
+export interface TypographyProps {
   as?: TElemnts;
   children: string;
   size?: SizeOptions;
@@ -32,14 +32,14 @@ interface TypographyProps {
 type TSizeClassNames = Record<SizeOptions, string>;
 
 const sizeClassNames: TSizeClassNames = {
-  h1: 'font-normal text-88x lg:text-380x text-center text-white',
+  h1: ' text-88x font-black lg:text-380x text-center text-white',
   h2: 'text-60x lg:text-200x text-center text-white',
   h3: 'text-white text-40x lg:text-120x text-center ',
   h4: 'text-24x lg:text-80x text-center text-white',
   small: 'text-base',
   strong: 'text-lg font-medium',
   label: '',
-  paragraph: 'text-base text-white text-14x lg:text-18x'
+  paragraph: 'text-base font-normal text-white text-14x lg:text-18x',
 };
 
 const Text = ({
@@ -47,7 +47,7 @@ const Text = ({
   children = '',
   size = 'paragraph',
   cls = '',
-  isHTML = false
+  isHTML = false,
 }: TypographyProps) => {
   const As = as;
 
@@ -60,7 +60,7 @@ const Text = ({
         <As
           className={clsx('transition-[font-size]', sizeClassNames[size], cls)}
           dangerouslySetInnerHTML={{
-            __html: children?.replace(/\\n|\n/g, '<br/>') ?? ''
+            __html: children?.replace(/\\n|\n/g, '<br/>') ?? '',
           }}
         />
       ) : (

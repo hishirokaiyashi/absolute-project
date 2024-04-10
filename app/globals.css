@@ -5,6 +5,7 @@
 :root {
   --primary-text-hex: #1C1C1C;
   --secondary-text-hex: #ECECEC;
+ 
   --container-px: 1440px;
 
   --space-xxxl: 3.375rem; /* 54px */
