@@ -1,35 +1,20 @@
-import Text, {
-  SizeOptions,
-  TElemnts,
-} from '@/components/atoms/commons/Typography';
-import clsx from 'clsx';
+import Text from '@/components/atoms/commons/Typography';
 interface IParagraphProps {
   title: string;
   subTitle: string;
   className?: string;
-  as?: TElemnts;
-  size?: SizeOptions;
-  sizeSubtilte?: SizeOptions;
-  cls?: string;
-  subCls?: string;
-  isHTML?: boolean;
 }
 const ContainerElement = ({
-  as = 'p',
-  size = 'paragraph',
-  cls = '',
-  subCls = '',
   title,
   subTitle,
-  sizeSubtilte = 'paragraph',
   className = '',
 }: IParagraphProps) => {
   return (
-    <div className={clsx(className)}>
-      <Text as={as} size={size} cls={cls}>
+    <div className={className}>
+      <Text as="p" size="h4" cls="font-spykDisplay">
         {title}
       </Text>
-      <Text as={as} size={sizeSubtilte} cls={subCls}>
+      <Text as="p" size="paragraph" cls="font-diaType">
         {subTitle}
       </Text>
     </div>

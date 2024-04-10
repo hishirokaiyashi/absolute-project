@@ -15,6 +15,7 @@ interface ImageProps extends IClassName {
   sizes?: string;
 }
 
+// TODO: Change name, this name is wrong and can be misleading from someone who uses it
 const Images = ({
   className = '',
   alt = '',

@@ -5,12 +5,12 @@ const Button = ({
   children,
   className,
   action,
+  // TODO: use this inside component
   title = '',
   type = ButtonType.BUTTON,
-  ...props
 }: IButton) => {
   return (
-    <button className={className} onClick={action} {...props}>
+    <button className={className} onClick={action}>
       {children}
     </button>
   );

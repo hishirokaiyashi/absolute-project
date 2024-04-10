@@ -2,7 +2,7 @@ import { IListELementButtons } from '@/models/interfaces';
 
 export const ListElementButton: IListELementButtons[] = [
   {
-    title: 'Du willst eine Businessidee launchen?',
+    title: 'Your Brand s(t)ucks?',
   },
   {
     title: 'Your Brand s(t)ucks?',

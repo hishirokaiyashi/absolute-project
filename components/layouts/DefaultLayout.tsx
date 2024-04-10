@@ -12,6 +12,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       <AppHeader />
       <main
         id="main"
+        // TODO: use double quotes
         className={`transition-colors duration-700 relative z-1 bg-primary`}
       >
         {children}

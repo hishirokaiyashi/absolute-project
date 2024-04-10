@@ -16,7 +16,7 @@ const Section = forwardRef<HTMLDivElement, IProps>(
       <section
         ref={ref}
         className={cn(
-          `box-border relative`,
+          'box-border relative',
           container && clsContainer,
           className
         )}

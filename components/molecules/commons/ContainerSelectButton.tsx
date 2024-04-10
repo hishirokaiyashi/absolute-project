@@ -2,7 +2,7 @@
 import Text from '@/components/atoms/commons/Typography';
 import { ListElementButton } from '@/data/ListElementButtons';
 import clsx from 'clsx';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 interface IContainerSelectButtonProps {
   actionClick: (data: boolean) => void;
   isOpenForm: boolean;
@@ -11,12 +11,12 @@ const ContainerSelectButton = ({
   actionClick,
   isOpenForm,
 }: IContainerSelectButtonProps) => {
-  const [isHoverItem, setIsHoverItem] = useState<string>('');
-  const handleSetHoverItem = (data: string) => {
+  const [isHoverItem, setIsHoverItem] = useState<number>();
+  const handleSetHoverItem = (data: number) => {
     setIsHoverItem(data);
   };
   const handleMouseLeave = () => {
-    setIsHoverItem('');
+    setIsHoverItem(undefined);
   };
   const handleOpenForm = () => {
     actionClick(!isOpenForm);
@@ -26,13 +26,15 @@ const ContainerSelectButton = ({
       {ListElementButton.map((el, index) => {
         return (
           <li
-            onMouseOver={() => handleSetHoverItem(el.title || '')}
+            onMouseOver={() => handleSetHoverItem(index)}
             onMouseLeave={handleMouseLeave}
             onClick={handleOpenForm}
             key={index}
             className={clsx(
               'relative group  flex items-center justify-between transition-opacity duration-700 cursor-pointer hover:cursor-pointer',
-              isHoverItem && isHoverItem !== el.title && 'opacity-15'
+              typeof isHoverItem !== 'undefined' &&
+                isHoverItem !== index &&
+                'opacity-15'
             )}
           >
             <Text

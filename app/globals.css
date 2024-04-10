@@ -2,17 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Move all of variables here directly to tailwindcss */
 :root {
-  --primary-text-hex: #1c1c1c;
-  --secondary-text-hex: #ececec;
-
+  --primary-text-hex: #1C1C1C;
+  --secondary-text-hex: #ECECEC;
+  --paragraph-text-hex:  rgba(236, 236, 236, 1)
+ 
   --container-px: 1440px;
 
   --space-xxxl: 3.375rem; /* 54px */
   --space-xxl: 2.5rem; /* 40px */
   --space-xl: 2rem; /* 32px */
   --space-l: 1.25rem; /* 20px */
-  --space-m: 1rem; /* 16px */
+  --space-m: 1rem /* 16px */
 }
 
 @layer base {
@@ -21,6 +23,7 @@
   }
 }
 
+/* TODO: Move to base */
 html,
 body {
   padding: 0;

@@ -23,6 +23,7 @@ export enum ButtonType {
   RESET = 'RESET',
 }
 export interface IButton extends IClassName {
+  // only allow string for children
   children: ReactNode;
   type?: ButtonType;
   title?: string;

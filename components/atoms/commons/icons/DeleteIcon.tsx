@@ -1,3 +1,5 @@
+// Change from white to red when hovering over
+// Should be CloseIcon
 import type { SVGProps } from 'react';
 const DeleteIcon = (props: SVGProps<SVGSVGElement>) => {
   return (

@@ -11,6 +11,7 @@ const HeroBlock = () => {
         />
       </div>
       <div className="absolute top-[32px] left-1/2  z-[1] -translate-x-2/4 w-[157px] h-[98px] lg:w-[280px] lg:h-[172px]">
+        {/* TODO: Change to Image */}
         <AbsoluteIcon />
       </div>
     </Section>
