@@ -7,7 +7,6 @@ export interface IPageProps {
   };
 }
 
-
 export interface IDictionary {
   [key: string]: {
     [nestedKey: string]: string;
@@ -28,4 +27,8 @@ export interface IButton extends IClassName {
   type?: ButtonType;
   title?: string;
   action?: () => void;
+}
+
+export interface IListELementButtons {
+  title?: string;
 }

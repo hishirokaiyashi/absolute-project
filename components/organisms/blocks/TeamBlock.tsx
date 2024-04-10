@@ -7,9 +7,9 @@ const TeamBlock = () => {
     <Section
       id="TeamBlock"
       container
-      className="flex flex-col items-center pb-[80px] pt-[100px] lg:pt-60 lg:pb-16 justify-center "
+      className="flex flex-col items-center pt-[100px] lg:pt-0 pb-[80px] lg:pb-16 justify-center "
     >
-      <div className="w-full   mt-[200px] lg:mt-60">
+      <div className="w-full lg:pb-0 pb-[27px]">
         <Text
           as="h2"
           size="h2"

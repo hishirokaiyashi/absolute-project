@@ -7,6 +7,7 @@ export type SizeOptions =
   | 'h4'
   | 'small'
   | 'strong'
+  | 'button'
   | 'label'
   | 'paragraph';
 
@@ -18,12 +19,13 @@ export type TElemnts =
   | 'h6'
   | 'p'
   | 'span'
+  | 'button'
   | 'div'
   | 'small';
 
 export interface TypographyProps {
   as?: TElemnts;
-  children: string;
+  children?: string;
   size?: SizeOptions;
   cls?: string;
   isHTML?: boolean;
@@ -39,6 +41,7 @@ const sizeClassNames: TSizeClassNames = {
   small: 'text-base',
   strong: 'text-lg font-medium',
   label: '',
+  button: 'text-24x lg:text-40x text-secondary f font-normal',
   paragraph: 'text-base font-normal text-secondary text-14x lg:text-18x',
 };
 

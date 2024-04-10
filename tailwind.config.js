@@ -50,7 +50,7 @@ module.exports = {
           {
             lineHeight: '10.625rem',
             letterSpacing: '7.6px',
-            fontWeight: '800',
+            fontWeight: '900',
           },
         ],
         '120x': [
@@ -101,7 +101,7 @@ module.exports = {
             fontWeight: '900',
           },
         ],
-        '40x': [
+        '40x-mb': [
           '2.5rem',
           {
             lineHeight: '2.25rem',

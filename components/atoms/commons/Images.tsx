@@ -29,6 +29,8 @@ const Images = ({
         <div className={twMerge('relative', className)}>
           {props.src && (
             <Image
+              width={width}
+              height={height}
               alt={alt}
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
@@ -41,6 +43,8 @@ const Images = ({
         </div>
       ) : (
         <Image
+          width={width}
+          height={height}
           alt={alt}
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
