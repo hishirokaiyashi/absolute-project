@@ -6,29 +6,23 @@ import { HTMLAttributes, ReactNode, forwardRef } from 'react';
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   container: boolean;
-  fullScreen?: boolean;
-  spacing?: 'small' | 'medium' | 'large';
+ 
 }
 
 const Section = forwardRef<HTMLDivElement, IProps>(
-  ({ container, fullScreen = false, spacing = 'small', ...props }, ref) => {
-    const clsContainer = 'px-absoluteAgentur-l';
-
-    const renderContainer = () => {
-      if (container) {
-        return <div className={cn(!fullScreen && clsContainer)}>{props.children}</div>;
-      }
-
-      return <>{props.children}</>;
-    };
+  ({ container, className, children }, ref) => {
+    const clsContainer = 'px-aa-l';
 
     return (
       <section
         ref={ref}
-        {...props}
-        className={cn(`transition-all box-border relative`, props.className)}
+        className={cn(
+          `box-border relative`,
+          container && clsContainer,
+         className
+        )}
       >
-        {renderContainer()}
+        {children}
       </section>
     );
   }

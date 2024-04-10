@@ -12,11 +12,11 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       <AppHeader />
       <main
         id="main"
-        className={`transition-colors duration-700 relative z-1`}
+        className={`transition-colors duration-700 relative z-1 bg-primary`}
       >
         {children}
       </main>
-      <AppFooter />
+      {/* <AppFooter /> */}
     </>
   );
 };

@@ -1,14 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 const spaces = {
-  'absoluteAgentur-l': 'var(--space-l)',
-  'absoluteAgentur-xl': 'var(--space-xl)',
-  'absoluteAgentur-xxl': 'var(--space-xxl)',
-  'absoluteAgentur-xxxl': 'var(--space-xxxl)'
+  'aa-m': 'var(--space-m)',
+  'aa-l': 'var(--space-l)',
+  'aa-xl': 'var(--space-xl)',
+  'aa-xxl': 'var(--space-xxl)',
+  'aa-xxxl': 'var(--space-xxxl)'
 };
 // --space-xxxl: 3.375rem; /* 54px */
 //   --space-xxl: 2.5rem; /* 40px */
 //   --space-xl: 2rem; /* 32px */
 //   --space-l: 1.25rem; /* 20px */
+// --space-m: 1rem /* 16px */
 
 module.exports = {
   content: [
