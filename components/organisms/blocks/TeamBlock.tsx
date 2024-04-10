@@ -1,5 +1,5 @@
 import Text from '@/components/atoms/commons/Typography';
-import Paragraph from '@/components/molecules/commons/Paragraph';
+import Paragraph from '@/components/molecules/commons/ContainerElement';
 import Section from '@/components/molecules/commons/Section';
 
 const TeamBlock = () => {

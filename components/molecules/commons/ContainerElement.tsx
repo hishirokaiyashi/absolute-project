@@ -1,10 +1,8 @@
 import Text, {
   SizeOptions,
   TElemnts,
-  TypographyProps,
 } from '@/components/atoms/commons/Typography';
 import clsx from 'clsx';
-import React from 'react';
 interface IParagraphProps {
   title: string;
   subTitle: string;
@@ -16,7 +14,7 @@ interface IParagraphProps {
   subCls?: string;
   isHTML?: boolean;
 }
-const Paragraph = ({
+const ContainerElement = ({
   as = 'p',
   size = 'paragraph',
   cls = '',
@@ -38,4 +36,4 @@ const Paragraph = ({
   );
 };
 
-export default Paragraph;
+export default ContainerElement;

@@ -1,5 +1,5 @@
 import Text from '@/components/atoms/commons/Typography';
-import Paragraph from '@/components/molecules/commons/Paragraph';
+import ContainerElement from '@/components/molecules/commons/ContainerElement';
 import Section from '@/components/molecules/commons/Section';
 
 const WorkBlock = () => {
@@ -9,12 +9,12 @@ const WorkBlock = () => {
       container
       className="flex flex-col items-center justify-center py-16 "
     >
-      <Paragraph
-        className={'flex flex-col gap-4 lg:gap-6 lg:max-w-[1080px]'}
-        title={'strategisch. visuell. digital.'}
-        subTitle={
-          'Wir sind Absolut, eine strategische Design- und Digital-Agentur, inhabergeführt und frei. Seit 2004 entwickeln wir identitätsprägende Marken und wirkungsvolle Kommunikation für das digitale Heute. Geht’s um Relevanz, brechen wir mit Konventionen: mutig, scharfsinnig und differenziert.'
-        }
+      <ContainerElement
+        className="flex flex-col gap-4 lg:gap-6 lg:max-w-[1080px]"
+        title="strategisch. visuell. digital."
+        cls="font-spykDisplay"
+        subTitle="Wir sind Absolut, eine strategische Design- und Digital-Agentur, inhabergeführt und frei. Seit 2004 entwickeln wir identitätsprägende Marken und wirkungsvolle Kommunikation für das digitale Heute. Geht’s um Relevanz, brechen wir mit Konventionen: mutig, scharfsinnig und differenziert."
+        subCls="font-diaType"
         size="h4"
         sizeSubtilte="paragraph"
       />
@@ -24,15 +24,13 @@ const WorkBlock = () => {
           WORK
         </Text>
       </div>
-      <Paragraph
-        className={'flex flex-col gap-4 lg:gap-6 lg:max-w-[1080px] lg:mt-8 '}
-        title={'We make it happen.'}
-        subTitle={
-          ' Brand Storys, die Emotionen, Werte und Ziele verbinden. Inhaltlich stark und optisch bestechend. Das macht sie so verdammt erfolgreich.  Überzeuge dich selbst.'
-        }
+      <ContainerElement
+        className="flex flex-col gap-4 lg:gap-6 lg:max-w-[1080px] lg:mt-8 "
+        title="We make it happen."
+        subTitle=" Brand Storys, die Emotionen, Werte und Ziele verbinden. Inhaltlich stark und optisch bestechend. Das macht sie so verdammt erfolgreich.  Überzeuge dich selbst."
         size="h4"
-        cls={'font-normal font-spykDisplay'}
-        subCls={'font-diaType'}
+        cls="font-normal font-spykDisplay"
+        subCls="font-diaType"
         sizeSubtilte="paragraph"
       />
     </Section>
