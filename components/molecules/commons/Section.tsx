@@ -16,7 +16,7 @@ const Section = forwardRef<HTMLDivElement, IProps>(
 
     const renderContainer = () => {
       if (container) {
-        return <div className={cn(clsContainer)}>{props.children}</div>;
+        return <div className={cn(!fullScreen && clsContainer)}>{props.children}</div>;
       }
 
       return <>{props.children}</>;

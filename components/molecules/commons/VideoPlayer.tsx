@@ -1,66 +1,87 @@
-"use client";
-import clsx from "clsx";
-import React, { useRef, useEffect, useState } from "react";
-import ReactPlayer from "react-player";
-
-interface IVideoPlayerProps {
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import ReactPlayer from 'react-player/vimeo';
+import { twMerge } from 'tailwind-merge';
+interface IProps {
   url: string;
+  objectPosition?: { x: number; y: number };
+  aspectRatio?: number;
   className?: string;
-  aspectRatio: number;
 }
-
 const VideoPlayer = ({
   url,
-  className,
-  aspectRatio,
-}: // containerWidth
-IVideoPlayerProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const [isClient, setIsClient] = useState<boolean>(false);
-
+  objectPosition = {
+    x: 50,
+    y: 50
+  },
+  aspectRatio = 16 / 9,
+  className = ''
+}: IProps) => {
+  const [videoSize, setVideoSize] = useState({
+    width: 0,
+    height: 0,
+    left: 0,
+    top: 0
+  });
+  const [isClient, setIsClient] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const handleResize = () => {
+    if (ref && ref.current) {
+      const viewHeight = ref.current?.clientHeight;
+      const viewWidth = ref.current?.clientWidth;
+      const videoWidth = viewHeight * aspectRatio;
+      const videoHeight = viewWidth / aspectRatio;
+      if (viewWidth <= videoWidth) {
+        setVideoSize({
+          width: videoWidth,
+          height: viewHeight,
+          left: -(videoWidth - viewWidth) * (objectPosition.x / 100),
+          top: 0
+        });
+      } else {
+        setVideoSize({
+          width: viewWidth,
+          height: videoHeight,
+          left: 0,
+          top: -(videoHeight - viewHeight) * (objectPosition.y / 100)
+        });
+      }
+    }
+  };
   useEffect(() => {
     setIsClient(true);
-    const updateContainerWidth = () => {
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-      }
-    };
-
-    updateContainerWidth();
-
-    window.addEventListener("resize", updateContainerWidth);
-    return () => {
-      window.removeEventListener("resize", updateContainerWidth);
-    };
   }, []);
-  const height = containerWidth;
+  useEffect(() => {
+    if (ref && ref.current) {
+      handleResize();
+      window.addEventListener('resize', handleResize);
+    }
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [ref, aspectRatio, objectPosition.x, objectPosition.y]);
   return (
     <div
-      className={clsx("absolute w-full h-full top-0 ", className)}
-      ref={containerRef}
+      className={twMerge('absolute w-full h-full top-0', className)}
+      ref={ref}
     >
       {isClient && (
         <ReactPlayer
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            pointerEvents: "none",
-          }}
-          className="lg:top-0"
-          width="100%"
-          playing={true}
-          height="100%"
-          muted
-          loop={true}
-          url={url}
-          controls={true}
           playsinline={true}
+          url={url}
+          height={videoSize.height}
+          width={videoSize.width}
+          loop={true}
+          muted
+          style={{
+            position: 'absolute',
+            top: videoSize.top,
+            left: videoSize.left,
+            pointerEvents: 'none'
+          }}
         />
       )}
     </div>
   );
 };
-
 export default VideoPlayer;
