@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 type SizeOptions =
   | 'h1'
   | 'h2'
@@ -63,7 +64,9 @@ const Text = ({
           }}
         />
       ) : (
-        <As className={clsx('transition-[font-size]', sizeClassNames[size])}>
+        <As
+          className={clsx('transition-[font-size]', sizeClassNames[size], cls)}
+        >
           {children}
         </As>
       )}

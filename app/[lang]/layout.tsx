@@ -23,7 +23,7 @@ export default function RootLayout({
     <html
       lang={params.lang}
       className={cn(
-        `relative antialiased scroll-smooth`,
+        `relative antialiased scroll-smooth bg-black`,
         cameraPlain.variable,
         spykDisplay.variable,
         diaType.variable
