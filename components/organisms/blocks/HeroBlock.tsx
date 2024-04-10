@@ -17,4 +17,3 @@ const HeroBlock = () => {
   );
 };
 export default HeroBlock;
-//p-aa-l

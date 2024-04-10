@@ -24,8 +24,8 @@ module.exports = {
         '88x': '5.5rem',
       },
       colors: {
-        primary: 'var(--primary-hex)',
-        secondary: 'var(--secondary-hex)',
+        primary: 'var(--primary-text-hex)',
+        secondary: 'var(--secondary-text-hex)',
       },
       fontFamily: {
         cameraPlain: ['var(--font-cameraPlain)'],
@@ -49,7 +49,7 @@ module.exports = {
           '12.5rem',
           {
             lineHeight: '10.625rem',
-            letterSpacing: '0.01px',
+            letterSpacing: '7.6px',
             fontWeight: '800',
           },
         ],

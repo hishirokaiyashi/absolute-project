@@ -5,7 +5,7 @@ import Section from '@/components/molecules/commons/Section';
 const WorkBlock = () => {
   return (
     <Section
-      id="HeroBlock"
+      id="WorkBlock"
       container
       className="flex flex-col items-center justify-center py-16 "
     >
@@ -19,23 +19,23 @@ const WorkBlock = () => {
         sizeSubtilte="paragraph"
       />
 
-      <div className=" mb-[27px] lg:mb-8 mt-[200px] lg:mt-60">
-        <Text as="h1" size="h1">
+      <div className=" mb-[27px] mt-[200px] lg:mt-60">
+        <Text as="h1" size="h1" cls="lg:text-[25vw] font-cameraPlain">
           WORK
         </Text>
       </div>
       <Paragraph
-        className={'flex flex-col gap-4 lg:gap-6 lg:max-w-[1080px]'}
+        className={'flex flex-col gap-4 lg:gap-6 lg:max-w-[1080px] lg:mt-8 '}
         title={'We make it happen.'}
         subTitle={
           ' Brand Storys, die Emotionen, Werte und Ziele verbinden. Inhaltlich stark und optisch bestechend. Das macht sie so verdammt erfolgreich.  Überzeuge dich selbst.'
         }
         size="h4"
         cls={'font-normal font-spykDisplay'}
+        subCls={'font-diaType'}
         sizeSubtilte="paragraph"
       />
     </Section>
   );
 };
 export default WorkBlock;
-//p-aa-l

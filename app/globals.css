@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --primary-text-hex: #1C1C1C;
-  --secondary-text-hex: #ECECEC;
- 
+  --primary-text-hex: #1c1c1c;
+  --secondary-text-hex: #ececec;
+
   --container-px: 1440px;
 
   --space-xxxl: 3.375rem; /* 54px */
   --space-xxl: 2.5rem; /* 40px */
   --space-xl: 2rem; /* 32px */
   --space-l: 1.25rem; /* 20px */
-  --space-m: 1rem /* 16px */
+  --space-m: 1rem; /* 16px */
 }
 
 @layer base {
