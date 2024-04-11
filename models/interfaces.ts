@@ -31,3 +31,7 @@ export interface IButton extends IClassName {
 export interface IListELementButtons {
   title?: string;
 }
+
+export interface ICursorDescription {
+  description?: string;
+}

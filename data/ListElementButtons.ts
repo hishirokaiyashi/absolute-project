@@ -14,3 +14,18 @@ export const ListElementButton: IListELementButtons[] = [
     title: 'Die Strategie steht, jetzt willst du durchstarten?',
   },
 ];
+
+// export const cursorDescription: ICursorDescription[] = [
+//   {
+//     description: 'Ginevil Wecke das Böse in dir'
+//   },
+//   {
+//     description: 'Ginevil Wecke das Böse in dir'
+//   },
+//   {
+//     description: ''
+//   },
+//   {
+//     description: ''
+//   },
+// ]

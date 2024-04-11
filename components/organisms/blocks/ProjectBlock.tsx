@@ -1,6 +1,6 @@
 'use client';
 import { ButtonWithDot } from '@/components/atoms/commons/Button';
-import ImageElement from '@/components/atoms/commons/ImageElement';
+import { ImageElement } from '@/components/atoms/commons/ImageElement';
 import Text from '@/components/atoms/commons/Typography';
 import ContainerSelectButton from '@/components/molecules/commons/ContainerSelectButton';
 import Section from '@/components/molecules/commons/Section';

@@ -16,3 +16,8 @@
     @apply p-0 m-0 scroll-smooth;
   }
 }
+@layer components {
+  #cursor {
+    @apply absolute h-2.5 w-2.5 -translate-x-2/4 -translate-y-2/4 pointer-events-none transition-[background-color] duration-[0.2s] ease-[ease] rounded-[50%];
+  }
+}

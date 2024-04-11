@@ -1,7 +1,5 @@
 import { ButtonType, IButton } from '@/models/interfaces';
-import React from 'react';
 import Text from './Typography';
-import ImageElement from './ImageElement';
 
 export const ButtonWithIcon = ({
   className,

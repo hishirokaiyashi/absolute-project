@@ -11,6 +11,8 @@ export type SizeOptions =
   | 'label'
   | 'paragraph'
   | 'spanSecond'
+  | 'cursorTitle'
+  | 'cursorSubTitle'
   | 'span';
 
 export type TElemnts =
@@ -53,6 +55,11 @@ const sizeClassNames: TSizeClassNames = {
     'text-base font-normal text-secondary text-14x lg:text-18x font-diaType',
   span: 'text-base lg:text-2xl font-cameraPlain text-secondary',
   spanSecond: 'text-sm lg:text-lg font-diaType text-secondary',
+  cursorTitle:
+    'text-[#DEE0DF] font-thin font-diaType lg:text-lg text-secondary leading-[27px] tracking-[0.01em] text-left',
+
+  cursorSubTitle:
+    'text-[#DEE0DF] font-thin font-diaType lg:text-lg text-secondary leading-[27px] tracking-[0.01em] text-left text-nowrap',
 };
 
 const Text = ({

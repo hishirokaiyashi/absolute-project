@@ -1,11 +1,8 @@
 import { IClassName } from '@/models/interfaces';
 import NextImage from 'next/image';
 import { twMerge } from 'tailwind-merge';
-
-export type IImagePosition = {
-  x: number;
-  y: number;
-};
+const blurDataURL =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=';
 
 interface IProps extends IClassName {
   src: string;
@@ -17,16 +14,23 @@ interface IProps extends IClassName {
   height?: number;
 }
 
-const Image = ({ className = '', fill = true, alt = '', ...props }: IProps) => {
+export const ImageElement = ({
+  className = '',
+  fill = true,
+  alt = '',
+  src,
+  ...props
+}: IProps) => {
   return (
     <>
       {fill ? (
         <div className={twMerge('relative', className)}>
-          {props.src && (
+          {src && (
             <NextImage
               alt={alt}
               placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
+              blurDataURL={blurDataURL}
+              src={src}
               {...props}
               fill
               quality={100}
@@ -35,17 +39,41 @@ const Image = ({ className = '', fill = true, alt = '', ...props }: IProps) => {
           )}
         </div>
       ) : (
-        <NextImage
-          alt={alt}
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
-          quality={100}
-          {...props}
-          className={className}
-        />
+        src && (
+          <NextImage
+            alt={alt}
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            quality={100}
+            src={src}
+            className={className}
+            {...props}
+          />
+        )
       )}
     </>
   );
 };
-
-export default Image;
+export const StickyImage = ({
+  className = '',
+  alt = '',
+  src,
+  ...props
+}: IProps) => {
+  return (
+    <div className={`sticky top-0 left-0 z-2 ${className}`}>
+      {src && (
+        <NextImage
+          alt={alt}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          src={src}
+          {...props}
+          fill
+          quality={100}
+          className="h-screen"
+        />
+      )}
+    </div>
+  );
+};
