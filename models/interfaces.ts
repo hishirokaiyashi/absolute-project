@@ -24,7 +24,7 @@ export enum ButtonType {
 }
 export interface IButton extends IClassName {
   children: ReactNode;
-  type?: ButtonType;
+  type?: 'button' | 'submit' | 'reset';
   title?: string;
   action?: () => void;
 }

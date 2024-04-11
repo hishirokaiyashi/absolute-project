@@ -1,6 +1,7 @@
-import { IClassName } from '@/models/interfaces';
-import NextImage from 'next/image';
+import { ButtonType, IClassName } from '@/models/interfaces';
+import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
+import { ButtonWithIcon } from './Button';
 const blurDataURL =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=';
 
@@ -26,7 +27,7 @@ export const ImageElement = ({
       {fill ? (
         <div className={twMerge('relative', className)}>
           {src && (
-            <NextImage
+            <Image
               alt={alt}
               placeholder="blur"
               blurDataURL={blurDataURL}
@@ -40,7 +41,7 @@ export const ImageElement = ({
         </div>
       ) : (
         src && (
-          <NextImage
+          <Image
             alt={alt}
             placeholder="blur"
             blurDataURL={blurDataURL}
@@ -63,7 +64,7 @@ export const StickyImage = ({
   return (
     <div className={`sticky top-0 left-0 z-2 ${className}`}>
       {src && (
-        <NextImage
+        <Image
           alt={alt}
           placeholder="blur"
           blurDataURL={blurDataURL}
@@ -74,6 +75,7 @@ export const StickyImage = ({
           className="h-screen"
         />
       )}
+      <ButtonWithIcon icon={<></>}>asdasdasd</ButtonWithIcon>
     </div>
   );
 };

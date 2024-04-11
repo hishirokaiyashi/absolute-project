@@ -61,6 +61,7 @@ const CustomCursor = ({
         className={`fixed pointer-events-none z-5 ease-in`}
       />
       <div
+        id="pointer"
         style={{ top: position.y, left: position.x }}
         ref={cursorRef}
         className={`flex flex-col lg:max-w-[180px] text-secondary translate-x-[16px] translate-y-[20px] p-0 fixed pointer-events-none z-5  `}
