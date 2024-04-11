@@ -7,10 +7,8 @@ export type SizeOptions =
   | 'small'
   | 'strong'
   | 'button'
-  | 'buttonSecond'
   | 'label'
   | 'paragraph'
-  | 'spanSecond'
   | 'span';
 
 export type TElemnts =
@@ -30,6 +28,7 @@ export interface TypographyProps {
   as?: TElemnts;
   children?: string;
   size?: SizeOptions;
+  cls?: string;
   isHTML?: boolean;
 }
 
@@ -38,28 +37,22 @@ type TSizeClassNames = Record<SizeOptions, string>;
 const sizeClassNames: TSizeClassNames = {
   h1:
     'text-88x leading-[85%]  font-black lg:text-[25vw] text-center text-secondary font-cameraPlain',
-  h2:
-    'text-60x lg:text-200x text-center text-secondary font-black font-cameraPlain',
+  h2: 'text-60x lg:text-200x text-center text-secondary',
   h3: 'text-secondary text-40x lg:text-120x text-center ',
   h4: 'text-24x lg:text-80x text-center text-secondary font-spykDisplay',
   small: 'text-base',
   strong: 'text-lg font-medium',
   label: '',
-  button:
-    'text-24x lg:text-40x text-secondary font-normal py-[5px] pr-[8px] w-full lg:py-0 lg:pr-0 text-wrap lg:text-nowrap lg:text-center font-spykDisplay',
-  buttonSecond:
-    'text-secondary text-center font-cameraPlain text-lg lg:text-2xl',
+  button: 'text-24x lg:text-40x text-secondary f font-normal',
   paragraph:
     'text-base font-normal text-secondary text-14x lg:text-18x font-diaType',
   span: 'text-base lg:text-2xl font-cameraPlain text-secondary',
-  spanSecond: 'text-sm lg:text-lg font-diaType text-secondary',
 };
 
 const Text = ({
   as = 'p',
   children = '',
   size = 'paragraph',
-  isHTML = false,
 }: TypographyProps) => {
   const As = as;
 
@@ -68,18 +61,12 @@ const Text = ({
 
   return (
     <>
-      {isHTML === true ? (
-        <As
-          className={clsx('transition-[font-size]', sizeClassNames[size])}
-          dangerouslySetInnerHTML={{
-            __html: children?.replace(/\\n|\n/g, '<br/>') ?? '',
-          }}
-        />
-      ) : (
-        <As className={clsx('transition-[font-size]', sizeClassNames[size])}>
-          {children}
-        </As>
-      )}
+      <As
+        className={clsx('transition-[font-size]', sizeClassNames[size])}
+        dangerouslySetInnerHTML={{
+          __html: children?.replace(/\\n|\n/g, '<br/>') ?? '',
+        }}
+      />
     </>
   );
 };

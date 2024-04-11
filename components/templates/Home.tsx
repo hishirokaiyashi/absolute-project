@@ -10,6 +10,7 @@ const HomeTemplate = () => {
       <HeroBlock />
       <WorkBlock />
       <ProjectBlock />
+
       <TeamBlock />
     </>
   );

@@ -18,18 +18,16 @@ export interface IClassName {
 }
 
 export enum ButtonType {
-  BUTTON = 'BUTTON',
-  SUBMIT = 'SUBMIT',
-  RESET = 'RESET',
+  BUTTON = 'button',
+  SUBMIT = 'submit',
+  RESET = 'reset',
 }
 export interface IButton extends IClassName {
-  // only allow string for children
   children: ReactNode;
   type?: ButtonType;
   title?: string;
   action?: () => void;
 }
-
 export interface IListELementButtons {
   title?: string;
 }

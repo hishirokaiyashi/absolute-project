@@ -1,51 +1,41 @@
-import React from 'react';
-
-import Image from 'next/image';
 import { IClassName } from '@/models/interfaces';
-import { imagePlaceholder } from '@/models/image';
+import NextImage from 'next/image';
 import { twMerge } from 'tailwind-merge';
 
-interface ImageProps extends IClassName {
+export type IImagePosition = {
+  x: number;
+  y: number;
+};
+
+interface IProps extends IClassName {
   src: string;
   alt?: string;
+  priority?: boolean;
+  sizes?: string;
+  fill?: boolean;
   width?: number;
   height?: number;
-  priority?: boolean;
-  fill?: boolean;
-  sizes?: string;
 }
 
-// TODO: Change name, this name is wrong and can be misleading from someone who uses it
-const Images = ({
-  className = '',
-  alt = '',
-  width,
-  height,
-  fill = true,
-  ...props
-}: ImageProps) => {
+const Image = ({ className = '', fill = true, alt = '', ...props }: IProps) => {
   return (
     <>
       {fill ? (
         <div className={twMerge('relative', className)}>
           {props.src && (
-            <Image
-              width={width}
-              height={height}
+            <NextImage
               alt={alt}
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
               {...props}
               fill
               quality={100}
-              className="absolute object-cover w-full h-full"
+              className="object-cover w-full h-full"
             />
           )}
         </div>
       ) : (
-        <Image
-          width={width}
-          height={height}
+        <NextImage
           alt={alt}
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII="
@@ -58,4 +48,4 @@ const Images = ({
   );
 };
 
-export default Images;
+export default Image;

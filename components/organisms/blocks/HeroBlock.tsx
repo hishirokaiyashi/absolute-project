@@ -1,3 +1,4 @@
+import ImageElement from '@/components/atoms/commons/ImageElement';
 import AbsoluteIcon from '@/components/atoms/commons/icons/AbsoluteIcon';
 import Section from '@/components/molecules/commons/Section';
 import VideoPlayer from '@/components/molecules/commons/VideoPlayer';
@@ -11,7 +12,6 @@ const HeroBlock = () => {
         />
       </div>
       <div className="absolute top-[32px] left-1/2  z-[1] -translate-x-2/4 w-[157px] h-[98px] lg:w-[280px] lg:h-[172px]">
-        {/* TODO: Change to Image */}
         <AbsoluteIcon />
       </div>
     </Section>

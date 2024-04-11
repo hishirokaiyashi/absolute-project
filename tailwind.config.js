@@ -1,16 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const spaces = {
-  'aa-m': 'var(--space-m)',
-  'aa-l': 'var(--space-l)',
-  'aa-xl': 'var(--space-xl)',
-  'aa-xxl': 'var(--space-xxl)',
-  'aa-xxxl': 'var(--space-xxxl)',
-};
-// --space-xxxl: 3.375rem; /* 54px */
-//   --space-xxl: 2.5rem; /* 40px */
-//   --space-xl: 2rem; /* 32px */
-//   --space-l: 1.25rem; /* 20px */
-// --space-m: 1rem /* 16px */
 
 module.exports = {
   content: [
@@ -32,7 +20,14 @@ module.exports = {
         spykDisplay: ['var(--font-spykDisplay)'],
         diaType: ['var(--font-diaType)'],
       },
-      spacing: spaces,
+
+      spacing: {
+        'aa-m': '1rem',
+        'aa-l': '1.25rem',
+        'aa-xl': '2rem',
+        'aa-xxl': '2.5rem',
+        'aa-xxxl': '3.375rem',
+      },
       maxWidth: {
         maxWidthLayout: 'var(--container-layout-px)',
       },

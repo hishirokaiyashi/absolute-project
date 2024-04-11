@@ -37,11 +37,7 @@ const ContainerSelectButton = ({
                 'opacity-15'
             )}
           >
-            <Text
-              as="span"
-              size="button"
-              cls="py-[5px] pr-[8px] w-full lg:py-0 lg:pr-0 text-wrap lg:text-nowrap lg:text-center font-spykDisplay "
-            >
+            <Text as="span" size="button">
               {el.title}
             </Text>
             <div className="w-[40px] lg:w-full h-[40px] flex items-center justify-center p-[9px] lg:p-0 lg:ml-8">
