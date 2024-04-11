@@ -38,10 +38,8 @@ export interface TypographyProps {
 type TSizeClassNames = Record<SizeOptions, string>;
 
 const sizeClassNames: TSizeClassNames = {
-  h1:
-    'text-88x leading-[85%]  font-black lg:text-[25vw] text-center text-secondary font-cameraPlain',
-  h2:
-    'text-60x lg:text-200x text-center text-secondary font-black font-cameraPlain',
+  h1: 'text-88x leading-[85%]  font-black lg:text-[25vw] text-center text-secondary font-cameraPlain',
+  h2: 'text-60x lg:text-200x text-center text-secondary font-black font-cameraPlain',
   h3: 'text-secondary text-40x lg:text-120x text-center ',
   h4: 'text-24x lg:text-80x text-center text-secondary font-spykDisplay',
   small: 'text-base',
@@ -59,14 +57,14 @@ const sizeClassNames: TSizeClassNames = {
     'text-[#DEE0DF] font-thin font-diaType lg:text-lg text-secondary leading-[27px] tracking-[0.01em] text-left',
 
   cursorSubTitle:
-    'text-[#DEE0DF] font-thin font-diaType lg:text-lg text-secondary leading-[27px] tracking-[0.01em] text-left text-nowrap',
+    'text-[#DEE0DF] font-thin font-diaType lg:text-lg text-secondary leading-[27px] tracking-[0.01em] text-left text-nowrap'
 };
 
-const Text = ({
+const Typography = ({
   as = 'p',
   children = '',
   size = 'paragraph',
-  isHTML = false,
+  isHTML = false
 }: TypographyProps) => {
   const As = as;
 
@@ -79,7 +77,7 @@ const Text = ({
         <As
           className={clsx('transition-[font-size]', sizeClassNames[size])}
           dangerouslySetInnerHTML={{
-            __html: children?.replace(/\\n|\n/g, '<br/>') ?? '',
+            __html: children?.replace(/\\n|\n/g, '<br/>') ?? ''
           }}
         />
       ) : (
@@ -91,4 +89,4 @@ const Text = ({
   );
 };
 
-export default Text;
+export default Typography;

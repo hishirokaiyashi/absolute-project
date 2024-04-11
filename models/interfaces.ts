@@ -20,7 +20,7 @@ export interface IClassName {
 export enum ButtonType {
   BUTTON = 'button',
   SUBMIT = 'submit',
-  RESET = 'reset',
+  RESET = 'reset'
 }
 export interface IButton extends IClassName {
   children: ReactNode;
@@ -34,4 +34,10 @@ export interface IListELementButtons {
 
 export interface ICursorDescription {
   description?: string;
+}
+
+export interface IListElementSticky {
+  src: string;
+  cursorTitle: string;
+  subTitle: string;
 }

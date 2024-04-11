@@ -1,38 +1,27 @@
 'use client';
 import CustomCursor from '@/components/atoms/commons/CursorPointerCustom';
-import {
-  ImageElement,
-  StickyImage,
-} from '@/components/atoms/commons/ImageElement';
-import Text from '@/components/atoms/commons/Typography';
+import { ImageElement } from '@/components/atoms/commons/ImageElement';
+import Typography from '@/components/atoms/commons/Typography';
 import Section from '@/components/molecules/commons/Section';
-import TitleAndDescription from '@/components/molecules/commons/TitleAndDescription';
-import clsx from 'clsx';
-import { MouseEvent, useEffect, useRef, useState } from 'react';
+import TitleDescription from '@/components/molecules/commons/TitleDescription';
+// import { ListElementSticky } from '@/data/ListElementSticky';
+import { useState } from 'react';
 
 const WorkBlock = () => {
-  const SUPPORTED_CURSORS = [
-    'GinevilWecke das Böse in dir',
-    'Ginevil Wecke das Böse in dir',
-    'TS Tor xxxxxxxx',
-    'Peak Performance No Bullshit inside',
-    'Bratwurst & Bowls No Bullshit inside',
-  ];
   const [isHoverItem, setIsHoverItem] = useState({
     itemFirst: false,
     itemSecond: false,
     itemThird: false,
     itemFouth: false,
-    itemFifth: false,
+    itemFifth: false
   });
-
   return (
     <Section
       id="WorkBlock"
       container
       className="flex flex-col items-center justify-center mt-[200px] lg:mt-60"
     >
-      <TitleAndDescription
+      <TitleDescription
         title="WORK"
         subTitle="We make it happen."
         description=" Brand Storys, die Emotionen, Werte und Ziele verbinden. Inhaltlich stark und optisch bestechend. Das macht sie so verdammt erfolgreich.  Überzeuge dich selbst."
@@ -40,10 +29,10 @@ const WorkBlock = () => {
       <div className="relative w-full py-[20px]">
         <div
           onMouseEnter={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemFirst: true }));
+            setIsHoverItem(prev => ({ ...prev, itemFirst: true }));
           }}
           onMouseLeave={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemFirst: false }));
+            setIsHoverItem(prev => ({ ...prev, itemFirst: false }));
           }}
           id="1"
           className="sticky top-0 left-0 z-0 cursor-pointer"
@@ -62,10 +51,10 @@ const WorkBlock = () => {
         </div>
         <div
           onMouseEnter={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemSecond: true }));
+            setIsHoverItem(prev => ({ ...prev, itemSecond: true }));
           }}
           onMouseLeave={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemSecond: false }));
+            setIsHoverItem(prev => ({ ...prev, itemSecond: false }));
           }}
           className="sticky top-0 left-0 cursor-pointer z-2"
           id="2"
@@ -84,10 +73,10 @@ const WorkBlock = () => {
         </div>
         <div
           onMouseEnter={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemThird: true }));
+            setIsHoverItem(prev => ({ ...prev, itemThird: true }));
           }}
           onMouseLeave={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemThird: false }));
+            setIsHoverItem(prev => ({ ...prev, itemThird: false }));
           }}
           id="3"
           className="sticky top-0 left-0 cursor-pointer z-3"
@@ -106,10 +95,10 @@ const WorkBlock = () => {
         </div>
         <div
           onMouseEnter={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemFouth: true }));
+            setIsHoverItem(prev => ({ ...prev, itemFouth: true }));
           }}
           onMouseLeave={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemFouth: false }));
+            setIsHoverItem(prev => ({ ...prev, itemFouth: false }));
           }}
           id="4"
           className="sticky top-0 left-0 cursor-pointer z-3"
@@ -128,10 +117,10 @@ const WorkBlock = () => {
         </div>
         <div
           onMouseEnter={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemFifth: true }));
+            setIsHoverItem(prev => ({ ...prev, itemFifth: true }));
           }}
           onMouseLeave={() => {
-            setIsHoverItem((prev) => ({ ...prev, itemFifth: false }));
+            setIsHoverItem(prev => ({ ...prev, itemFifth: false }));
           }}
           id="5"
           className="sticky top-0 left-0 z-2 "
@@ -148,13 +137,14 @@ const WorkBlock = () => {
             subTitle="No Bullshit inside"
           />
         </div>
+
         <div className="absolute top-0 w-full h-full pointer-events-none">
           <div className="sticky top-0 lg:top-0 lg:h-screen">
-            <div className="absolute z-20 flex justify-end w-full px-4 top-4 text-14x lg:top-[44px] lg:px-6">
-              <Text as="span">1/5</Text>
+            <div className="absolute z-20 flex justify-end w-full px-4 top-4 Typography-14x lg:top-[44px] lg:px-6">
+              <Typography as="span">1/5</Typography>
             </div>
             <div className="absolute bottom-0 w-full pointer-events-auto z-15 lg:w-auto lg:left-1/2 lg:-translate-x-1/2 lg:bottom-4">
-              <a className="z-20 inline-flex items-center justify-center w-full p-3 pb-10 font-black uppercase text-secondary text-18x font-cameraPlain group hover:cursor-pointer lg:text-24x lg:font-black lg:w-auto lg:pb-3">
+              <a className="z-20 inline-flex items-center justify-center w-full p-3 pb-10 font-black uppercase Typography-secondary Typography-18x font-cameraPlain group hover:cursor-pointer lg:Typography-24x lg:font-black lg:w-auto lg:pb-3">
                 Alle Projekte
                 <span className="w-[16px] h-[16px] border-2 border-secondary block rounded-full right-4 top-1/2 transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:m-0 lg:top-0 lg:right-0 lg:ml-4"></span>
               </a>

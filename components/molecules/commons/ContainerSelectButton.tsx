@@ -1,5 +1,5 @@
 'use client';
-import Text from '@/components/atoms/commons/Typography';
+import Typography from '@/components/atoms/commons/Typography';
 import { ListElementButton } from '@/data/ListElementButtons';
 import clsx from 'clsx';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ interface IContainerSelectButtonProps {
 }
 const ContainerSelectButton = ({
   actionClick,
-  isOpenForm,
+  isOpenForm
 }: IContainerSelectButtonProps) => {
   const [isHoverItem, setIsHoverItem] = useState<number>();
   const handleSetHoverItem = (data: number) => {
@@ -37,9 +37,9 @@ const ContainerSelectButton = ({
                 'opacity-15'
             )}
           >
-            <Text as="span" size="button">
+            <Typography as="span" size="button">
               {el.title}
-            </Text>
+            </Typography>
             <div className="w-[40px] lg:w-full h-[40px] flex items-center justify-center p-[9px] lg:p-0 lg:ml-8">
               <span className="w-4 h-4 lg:w-[18px] lg:h-[18px] transition-colors border-2 rounded-full border-secondary right-4 top-1/2 group-hover:bg-secondary lg:inline-block lg:relative lg:m-0 lg:top-0 lg:right-0"></span>
             </div>

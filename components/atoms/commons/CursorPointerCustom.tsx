@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import Text from './Typography';
+import Typography from './Typography';
 import clsx from 'clsx';
 
 interface ICustomCursor {
@@ -14,7 +14,7 @@ const CustomCursor = ({
   cursorTitle,
   id,
   isHovering,
-  subTitle,
+  subTitle
 }: ICustomCursor) => {
   // Reference to the cursor element
   const cursorRef = useRef(null);
@@ -27,7 +27,7 @@ const CustomCursor = ({
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({
         x: e.clientX,
-        y: e.clientY,
+        y: e.clientY
       });
     };
 
@@ -56,22 +56,17 @@ const CustomCursor = ({
       )}
     >
       <div
-        style={{ top: position.y, left: position.x }}
-        ref={cursorRef}
-        className={`fixed pointer-events-none z-5 ease-in`}
-      />
-      <div
         id="pointer"
         style={{ top: position.y, left: position.x }}
         ref={cursorRef}
-        className={`flex flex-col lg:max-w-[180px] text-secondary translate-x-[16px] translate-y-[20px] p-0 fixed pointer-events-none z-5  `}
+        className="flex flex-col lg:max-w-[180px] Typography-secondary translate-x-[16px] translate-y-[20px] p-0 fixed pointer-events-none z-5"
       >
-        <Text as="span" size="cursorTitle">
+        <Typography as="span" size="cursorTitle">
           {cursorTitle}
-        </Text>
-        <Text as="span" size="cursorSubTitle">
+        </Typography>
+        <Typography as="span" size="cursorSubTitle">
           {subTitle}
-        </Text>
+        </Typography>
       </div>
     </div>
   );

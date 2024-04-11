@@ -1,5 +1,5 @@
 import Section from '@/components/molecules/commons/Section';
-import TitleAndDescription from '@/components/molecules/commons/TitleAndDescription';
+import TitleDescription from '@/components/molecules/commons/TitleDescription';
 
 const TeamBlock = () => {
   return (
@@ -8,7 +8,7 @@ const TeamBlock = () => {
       container
       className="flex flex-col items-center justify-center mt-[200px] lg:mt-60"
     >
-      <TitleAndDescription
+      <TitleDescription
         title="TEAM"
         subTitle="Absolut. Auch hier."
         description={

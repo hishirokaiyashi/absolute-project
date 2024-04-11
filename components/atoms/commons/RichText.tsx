@@ -24,7 +24,7 @@ export type TElemnts =
   | 'span'
   | 'small';
 
-export interface TypographyProps {
+export interface RichTextProps {
   as?: TElemnts;
   children?: string;
   size?: SizeOptions;
@@ -35,8 +35,7 @@ export interface TypographyProps {
 type TSizeClassNames = Record<SizeOptions, string>;
 
 const sizeClassNames: TSizeClassNames = {
-  h1:
-    'text-88x leading-[85%]  font-black lg:text-[25vw] text-center text-secondary font-cameraPlain',
+  h1: 'text-88x leading-[85%]  font-black lg:text-[25vw] text-center text-secondary font-cameraPlain',
   h2: 'text-60x lg:text-200x text-center text-secondary',
   h3: 'text-secondary text-40x lg:text-120x text-center ',
   h4: 'text-24x lg:text-80x text-center text-secondary font-spykDisplay',
@@ -46,14 +45,14 @@ const sizeClassNames: TSizeClassNames = {
   button: 'text-24x lg:text-40x text-secondary f font-normal',
   paragraph:
     'text-base font-normal text-secondary text-14x lg:text-18x font-diaType',
-  span: 'text-base lg:text-2xl font-cameraPlain text-secondary',
+  span: 'text-base lg:text-2xl font-cameraPlain text-secondary'
 };
 
-const Text = ({
+const RichText = ({
   as = 'p',
   children = '',
-  size = 'paragraph',
-}: TypographyProps) => {
+  size = 'paragraph'
+}: RichTextProps) => {
   const As = as;
 
   if (typeof children === 'undefined' || children === '' || children === null)
@@ -64,11 +63,11 @@ const Text = ({
       <As
         className={clsx('transition-[font-size]', sizeClassNames[size])}
         dangerouslySetInnerHTML={{
-          __html: children?.replace(/\\n|\n/g, '<br/>') ?? '',
+          __html: children?.replace(/\\n|\n/g, '<br/>') ?? ''
         }}
       />
     </>
   );
 };
 
-export default Text;
+export default RichText;

@@ -1,4 +1,4 @@
-import { ButtonType, IClassName } from '@/models/interfaces';
+import { IClassName } from '@/models/interfaces';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 import { ButtonWithIcon } from './Button';
@@ -20,6 +20,7 @@ export const ImageElement = ({
   fill = true,
   alt = '',
   src,
+  sizes,
   ...props
 }: IProps) => {
   return (
@@ -62,7 +63,7 @@ export const StickyImage = ({
   ...props
 }: IProps) => {
   return (
-    <div className={`sticky top-0 left-0 z-2 ${className}`}>
+    <div className="sticky top-0 left-0 z-2 h-screen">
       {src && (
         <Image
           alt={alt}

@@ -1,7 +1,7 @@
 'use client';
 import { ButtonWithIcon } from '@/components/atoms/commons/Button';
 import { ImageElement } from '@/components/atoms/commons/ImageElement';
-import Text from '@/components/atoms/commons/Typography';
+import Typography from '@/components/atoms/commons/Typography';
 import ContainerSelectButton from '@/components/molecules/commons/ContainerSelectButton';
 import Section from '@/components/molecules/commons/Section';
 import { useState } from 'react';
@@ -16,19 +16,20 @@ const ProjectBlock = () => {
       {!isOpenForm ? (
         <div className="flex flex-col items-center justify-center ">
           <ImageElement
-            className="lg:pb-[53px]"
+            className="lg:pb-[53px] lg:h-[240px] lg:width-[240px]"
             fill={false}
             width={200}
             height={240}
             src="/images/gifs/Hand_Animation_Neg.gif"
           />
+
           <div>
-            <Text as="h2" size="h2">
+            <Typography as="h2" size="h2">
               {`START A \n PROJECT`}
-            </Text>
+            </Typography>
           </div>
           <ContainerSelectButton
-            actionClick={(data) => handleOpenForm(data)}
+            actionClick={data => handleOpenForm(data)}
             isOpenForm={isOpenForm}
           />
           <div>

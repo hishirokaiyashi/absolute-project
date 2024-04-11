@@ -5,10 +5,10 @@ interface IParagraphProps {
   description?: string;
   className?: string;
 }
-const TitleAndDescription = ({
+const TitleDescription = ({
   title,
   subTitle,
-  description,
+  description
 }: IParagraphProps) => {
   return (
     (title || subTitle || description) && (
@@ -39,4 +39,4 @@ const TitleAndDescription = ({
   );
 };
 
-export default TitleAndDescription;
+export default TitleDescription;
