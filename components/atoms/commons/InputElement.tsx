@@ -1,36 +1,20 @@
 import React from 'react';
-interface IInput {
+interface IInputProps {
   type: string;
   name: string;
-  placeholder: string;
+  placeholder?: string;
   value: string;
-  isTextArea: boolean;
 }
-const InputElement = ({
-  isTextArea = false,
-  type,
-  placeholder = '',
-  value,
-  name,
-}: IInput) => {
+const InputElement = ({ type, placeholder = '', value, name }: IInputProps) => {
   return (
-    <div className="lg:py-[12px] w-full">
-      {!isTextArea ? (
-        <input
-          name={name}
-          className="w-full font-diaType"
-          value={value}
-          type={type}
-          placeholder={placeholder}
-        />
-      ) : (
-        <textarea
-          name={name}
-          className="w-full font-diaType"
-          value={value}
-          placeholder={placeholder}
-        />
-      )}
+    <div className="w-full lg:py-[12px]">
+      <input
+        name={name}
+        className="w-full bg-transparent font-diaType"
+        value={value}
+        type={type}
+        placeholder={placeholder}
+      />
     </div>
   );
 };

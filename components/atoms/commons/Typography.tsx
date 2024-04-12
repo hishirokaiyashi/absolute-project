@@ -9,6 +9,7 @@ export type SizeOptions =
   | 'button'
   | 'buttonSecond'
   | 'label'
+  | 'linkHref'
   | 'paragraph'
   | 'paragraphSecond'
   | 'spanSecond'
@@ -52,11 +53,13 @@ const sizeClassNames: TSizeClassNames = {
     'text-24x lg:text-40x text-secondary font-normal text-wrap lg:text-nowrap lg:text-center font-spykDisplay',
   buttonSecond:
     'text-secondary text-center font-cameraPlain text-lg lg:text-2xl',
+  linkHref:
+    'text-base font-normal text-secondary text-14x lg:text-18x font-diaType underline underline-offset-1',
   paragraph:
     'text-base font-normal text-secondary text-14x lg:text-18x font-diaType',
   span: 'text-base lg:text-2xl font-cameraPlain text-secondary',
   spanSecond: 'text-sm lg:text-lg font-diaType text-secondary',
-  paragraphSecond: 'text-[40px] leading-[3.5rem] tracking-[0.01em]',
+  paragraphSecond: 'text-[40px] leading-[3.5rem] tracking-[0.01em] ',
   cursorTitle:
     'text-[#DEE0DF] font-thin font-diaType lg:text-lg text-secondary leading-[27px] tracking-[0.01em] text-left',
 
