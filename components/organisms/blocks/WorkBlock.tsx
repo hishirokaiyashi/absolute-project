@@ -44,7 +44,7 @@ const WorkBlock = () => {
               key={index}
               onMouseEnter={() => handleAddCursorTile(el.id)}
               onMouseLeave={() => handleRemoveCursorTile(el.id)}
-              id={el.id}
+              id={index.toString()}
               className="sticky top-0 left-0 z-0 cursor-pointer"
             >
               <div className="absolute z-10 flex items-end text-[14px] lg:items-start justify-between lg:justify-end w-full px-4 top-4 Typography-14x py-4  bottom-0 lg:top-[24px] lg:px-6">
