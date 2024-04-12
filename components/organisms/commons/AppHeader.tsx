@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const AppHeader = () => {
   // const ctx: IAppContext = useContext(AppContext) as IAppContext;
-  const clsHeaderDefault = 'fixed w-full top-0 left-0 z-[10] lg:h-[78px] ';
+  const clsHeaderDefault = 'fixed w-full top-0 left-0 z-[8] lg:h-[78px] ';
 
   const [expandingMenu, setExpandingMenu] = useState(false);
   const [isHoverItem, setIsHoverItem] = useState('');

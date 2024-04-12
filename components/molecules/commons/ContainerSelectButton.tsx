@@ -37,9 +37,11 @@ const ContainerSelectButton = ({
                 'opacity-15'
             )}
           >
-            <Typography as="span" size="button">
-              {el.title}
-            </Typography>
+            <div className="py-[5px] pr-[8px] w-full lg:py-0 lg:pr-0">
+              <Typography as="span" size="button">
+                {el.title}
+              </Typography>
+            </div>
             <div className="w-[40px] lg:w-full h-[40px] flex items-center justify-center p-[9px] lg:p-0 lg:ml-8">
               <span className="w-4 h-4 lg:w-[18px] lg:h-[18px] transition-colors border-2 rounded-full border-secondary right-4 top-1/2 group-hover:bg-secondary lg:inline-block lg:relative lg:m-0 lg:top-0 lg:right-0"></span>
             </div>

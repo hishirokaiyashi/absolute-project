@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 interface ICustomCursorProps {
   cursorTitle?: string;
-  id: number | string;
+  id: string;
   isHovering?: boolean;
   subTitle?: string;
 }
@@ -26,7 +26,7 @@ const CustomCursor = ({
   const [position, setPosition] = useState<IPostion>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const targetId = id.toString();
+    const targetId = id;
     // Event listener for mouse movement
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({

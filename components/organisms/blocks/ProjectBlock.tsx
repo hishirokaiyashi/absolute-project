@@ -4,6 +4,8 @@ import { ImageElement } from '@/components/atoms/commons/ImageElement';
 import Typography from '@/components/atoms/commons/Typography';
 import ContainerSelectButton from '@/components/molecules/commons/ContainerSelectButton';
 import Section from '@/components/molecules/commons/Section';
+import InputTextElements from '@/components/molecules/form/InputTextElements';
+import TitleSubtitleForm from '@/components/molecules/form/TitleSubtitleForm';
 import { useState } from 'react';
 
 const ProjectBlock = () => {
@@ -12,7 +14,11 @@ const ProjectBlock = () => {
     setIsOpenForm(data);
   };
   return (
-    <Section id="ProjectBlock" container className="lg:mt-60 mt-[100px]">
+    <Section
+      id="ProjectBlock"
+      container
+      className="relative lg:mt-60 mt-[100px]"
+    >
       {!isOpenForm ? (
         <div className="flex flex-col items-center justify-center ">
           <ImageElement
@@ -43,7 +49,32 @@ const ProjectBlock = () => {
           </div>
         </div>
       ) : (
-        <div className="w-full h-screen bg-primary"></div>
+        <form className="fixed top-0 z-[10] px-[20px] py-8 left-0 w-full  h-screen bg-primary overflow-y-hidden">
+          <div className="flex flex-col">
+            <div
+              onClick={() => setIsOpenForm(false)}
+              className="flex justify-end cursor-pointer"
+            >
+              <ImageElement
+                fill={false}
+                width={34}
+                height={34}
+                src="./images/icons/Close.svg"
+              />
+            </div>
+            <div className="flex flex-col lg:px-[305px] lg:pt-[28px] ">
+              <div className="lg:pt-[56px] lg:px-[56px] lg:max-w-[882px] lg:m-auto">
+                <div className="flex flex-col lg:gap-[12px] text-secondary">
+                  <TitleSubtitleForm title="Du willst eine Businessidee launchen?" />
+                </div>
+                <div className="lg:pt-[56px]">
+                  <InputTextElements />
+                </div>
+              </div>
+            </div>
+            <div className="lg:mt-[48px]"></div>
+          </div>
+        </form>
       )}
     </Section>
   );
