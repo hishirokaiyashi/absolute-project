@@ -38,6 +38,7 @@ const WorkBlock = () => {
       />
       <div className="relative w-full">
         {ListElementSticky?.map((el, index) => {
+          let countELement = index;
           return (
             <div
               key={index}
@@ -46,8 +47,15 @@ const WorkBlock = () => {
               id={el.id}
               className="sticky top-0 left-0 z-0 cursor-pointer"
             >
-              <div className="absolute z-20 flex justify-end w-full px-4 top-4 Typography-14x lg:top-[44px] lg:px-6">
-                <Typography as="span">1/5</Typography>
+              <div className="absolute z-10 flex items-end text-[14px] lg:items-start justify-between lg:justify-end w-full px-4 top-4 Typography-14x py-4  bottom-0 lg:top-[24px] lg:px-6">
+                <div className="lg:hidden">
+                  <Typography as="span">
+                    {`${el.cursorTitle} ${el.subTitle}`}
+                  </Typography>
+                </div>
+                <Typography as="span">{`${++countELement}/${
+                  ListElementSticky.length
+                }`}</Typography>
               </div>
               <ImageElement src={el.src} className="h-screen" sizes="100vw" />
               <CustomCursor
