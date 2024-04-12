@@ -3,31 +3,35 @@ import React, { useEffect, useRef, useState } from 'react';
 import Typography from './Typography';
 import clsx from 'clsx';
 
-interface ICustomCursor {
+interface ICustomCursorProps {
   cursorTitle?: string;
-  id: string;
+  id: number | string;
   isHovering?: boolean;
   subTitle?: string;
+}
+
+interface IPostion {
+  x: number;
+  y: number;
 }
 // Main CustomCursor component
 const CustomCursor = ({
   cursorTitle,
   id,
   isHovering,
-  subTitle
-}: ICustomCursor) => {
+  subTitle,
+}: ICustomCursorProps) => {
   // Reference to the cursor element
-  const cursorRef = useRef(null);
   // State to track cursor position
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState<IPostion>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const targetId = id;
+    const targetId = id.toString();
     // Event listener for mouse movement
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({
         x: e.clientX,
-        y: e.clientY
+        y: e.clientY,
       });
     };
 
@@ -58,7 +62,6 @@ const CustomCursor = ({
       <div
         id="pointer"
         style={{ top: position.y, left: position.x }}
-        ref={cursorRef}
         className="flex flex-col lg:max-w-[180px] Typography-secondary translate-x-[16px] translate-y-[20px] p-0 fixed pointer-events-none z-5"
       >
         <Typography as="span" size="cursorTitle">

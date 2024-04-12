@@ -29,15 +29,14 @@ const ProjectBlock = () => {
             </Typography>
           </div>
           <ContainerSelectButton
-            actionClick={data => handleOpenForm(data)}
+            action={(data) => handleOpenForm(data)}
             isOpenForm={isOpenForm}
           />
-          <div>
+          <div className="pt-[38px] lg:pt-20">
             <ButtonWithIcon
               icon={
-                <span className="w-[16px] h-[16px] border-2 border-secondary block rounded-full right-4 top-1/2 lg:-mt-[8px] transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:m-0 lg:top-0 lg:right-0 lg:ml-5"></span>
+                <span className="w-[16px] h-[16px] lg:w-[18px] lg:h-[18px] border-2 border-secondary block rounded-full right-4 top-1/2  transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></span>
               }
-              className="flex justify-center items-center lg:inline-block gap-4 pt-[38px] lg:pt-20 group"
             >
               light up fire
             </ButtonWithIcon>

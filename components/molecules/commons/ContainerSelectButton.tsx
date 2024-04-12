@@ -4,12 +4,12 @@ import { ListElementButton } from '@/data/ListElementButtons';
 import clsx from 'clsx';
 import { useState } from 'react';
 interface IContainerSelectButtonProps {
-  actionClick: (data: boolean) => void;
+  action: (data: boolean) => void;
   isOpenForm: boolean;
 }
 const ContainerSelectButton = ({
-  actionClick,
-  isOpenForm
+  action,
+  isOpenForm,
 }: IContainerSelectButtonProps) => {
   const [isHoverItem, setIsHoverItem] = useState<number>();
   const handleSetHoverItem = (data: number) => {
@@ -19,7 +19,7 @@ const ContainerSelectButton = ({
     setIsHoverItem(undefined);
   };
   const handleOpenForm = () => {
-    actionClick(!isOpenForm);
+    action(!isOpenForm);
   };
   return (
     <ul className=" gap-[8px] pb-[38px] pt-[50px] lg:gap-[24px] lg:pt-[100px] lg:pb-0 flex lg:items-center flex-col cursor-pointer justify-center ">

@@ -17,11 +17,6 @@ export interface IClassName {
   className?: string;
 }
 
-export enum ButtonType {
-  BUTTON = 'button',
-  SUBMIT = 'submit',
-  RESET = 'reset'
-}
 export interface IButton extends IClassName {
   children: ReactNode;
   type?: 'button' | 'submit' | 'reset';
@@ -37,6 +32,7 @@ export interface ICursorDescription {
 }
 
 export interface IListElementSticky {
+  id: string;
   src: string;
   cursorTitle: string;
   subTitle: string;

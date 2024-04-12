@@ -28,16 +28,20 @@ const AppHeader = () => {
               AA
             </Text>
           </a>
-          <ButtonWithIcon action={() => setExpandingMenu(true)}>
-            <LightningIcon className="w-[25px] h-[25px] lg:w-[34px] lg:h-[34px]" />
-          </ButtonWithIcon>
+          <ButtonWithIcon
+            icon={
+              <LightningIcon className="w-[25px] h-[25px] lg:w-[34px] lg:h-[34px]" />
+            }
+            action={() => setExpandingMenu(true)}
+          ></ButtonWithIcon>
         </div>
       ) : (
         <div className="flex flex-col items-center w-full h-screen overflow-hidden bg-black px-aa-xl lg:px-aa-xxxl lg:py-aa-xl">
           <div className="w-full text-end">
-            <ButtonWithIcon action={() => setExpandingMenu(false)}>
-              <CloseIcon width={34} height={34} />
-            </ButtonWithIcon>
+            <ButtonWithIcon
+              icon={<CloseIcon width={34} height={34} />}
+              action={() => setExpandingMenu(false)}
+            ></ButtonWithIcon>
           </div>
           <ul className="flex flex-col justify-center w-full items-center lg:gap-40x pt-[94px]">
             <li onMouseOver={() => setIsHoverItem('/work')}>

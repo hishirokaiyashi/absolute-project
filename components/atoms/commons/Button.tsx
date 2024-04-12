@@ -1,6 +1,6 @@
-import { ButtonType, IButton, IClassName } from '@/models/interfaces';
-import Typography from './Typography';
+import { IClassName } from '@/models/interfaces';
 import { ReactNode } from 'react';
+import Typography from './Typography';
 
 interface ButtonWithIconProps extends IClassName {
   icon: ReactNode;
@@ -14,14 +14,18 @@ export const ButtonWithIcon = ({
   action,
   icon,
   children,
-  type = ButtonType.BUTTON
+  type = 'button',
 }: ButtonWithIconProps) => {
   return (
-    <button type={type} className={className} onClick={action}>
+    <button
+      type={type}
+      className="flex items-center justify-center uppercase group"
+      onClick={action}
+    >
       <Typography as="span" size="buttonSecond">
         {children}
       </Typography>
-      <div>{icon}</div>
+      <div className={className}>{icon}</div>
     </button>
   );
 };
