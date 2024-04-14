@@ -1,16 +1,25 @@
 'use client';
 import Typography from '@/components/atoms/commons/Typography';
+import AppContext from '@/context/appContext';
 import { ListElementButton } from '@/data/ListElementButtons';
+import { IAppContext } from '@/models/appInterface';
 import clsx from 'clsx';
-import { useState } from 'react';
-interface IContainerSelectButtonProps {
-  action: (data: boolean) => void;
-  isOpenForm: boolean;
-}
-const ContainerSelectButton = ({
-  action,
-  isOpenForm,
-}: IContainerSelectButtonProps) => {
+import { useContext, useState } from 'react';
+const ContainerSelectButton = () => {
+  const { modal, updateState }: IAppContext = useContext(
+    AppContext
+  ) as IAppContext;
+
+  const onOpenForm = () => {
+    updateState &&
+      updateState({
+        modal: {
+          ...modal,
+          position: window.pageYOffset,
+          open: true
+        }
+      });
+  };
   const [isHoverItem, setIsHoverItem] = useState<number>();
   const handleSetHoverItem = (data: number) => {
     setIsHoverItem(data);
@@ -18,9 +27,9 @@ const ContainerSelectButton = ({
   const handleMouseLeave = () => {
     setIsHoverItem(undefined);
   };
-  const handleOpenForm = () => {
-    action(!isOpenForm);
-  };
+  // const handleOpenForm = () => {
+  //   action(!isOpenForm);
+  // };
   return (
     <ul className=" gap-[8px] pb-[38px] pt-[50px] lg:gap-[24px] lg:pt-[100px] lg:pb-0 flex lg:items-center flex-col cursor-pointer justify-center ">
       {ListElementButton.map((el, index) => {
@@ -28,7 +37,7 @@ const ContainerSelectButton = ({
           <li
             onMouseOver={() => handleSetHoverItem(index)}
             onMouseLeave={handleMouseLeave}
-            onClick={handleOpenForm}
+            onClick={onOpenForm}
             key={index}
             className={clsx(
               'relative group  flex items-center justify-between transition-opacity duration-700 cursor-pointer hover:cursor-pointer',

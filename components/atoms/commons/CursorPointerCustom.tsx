@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 interface ICustomCursorProps {
   cursorTitle?: string;
-  id: string;
+  SelectedId: string;
   isHovering?: boolean;
   subTitle?: string;
 }
@@ -17,21 +17,21 @@ interface IPostion {
 // Main CustomCursor component
 const CustomCursor = ({
   cursorTitle,
-  id,
+  SelectedId,
   isHovering,
-  subTitle,
+  subTitle
 }: ICustomCursorProps) => {
   // Reference to the cursor element
   // State to track cursor position
   const [position, setPosition] = useState<IPostion>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const targetId = id;
+    const targetId = SelectedId;
     // Event listener for mouse movement
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({
         x: e.clientX,
-        y: e.clientY,
+        y: e.clientY
       });
     };
 
