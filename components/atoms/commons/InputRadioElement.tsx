@@ -9,15 +9,15 @@ const InputRadioElement: React.FC<FormFieldRadioProps> = ({
 }) => {
   return (
     <div className="w-full lg:py-[12px]">
-      <div className="flex items-center lg:gap-[15px]">
-        <label className="pr-[20px] lg:pr-0 relative flex items-center rounded-full cursor-pointer">
+      <div className="flex  lg:gap-[15px]">
+        <label className="pr-[20px] lg:pr-0 relative flex  rounded-full cursor-pointer">
           <input
             className="hidden peer"
             type={type}
             {...register(name, { required: 'Please enter your first name.' })}
           />
 
-          <span className="inline-block w-[16px] h-[16px] lg:w-[12px] lg:h-[12px] border-2 rounded-full  border-secondary bg-primary peer-checked:border-2 peer-checked:border-secondary peer-checked:bg-secondary"></span>
+          <span className="inline-block mt-[7px] lg:mt-[7px] w-[16px] h-[16px] lg:w-[12px] lg:h-[12px] border-2 rounded-full  border-secondary bg-primary peer-checked:border-2 peer-checked:border-secondary peer-checked:bg-secondary"></span>
         </label>
         <div className="flex flex-1 gap-[4px] items-center text-nowrap">
           <div className="hidden lg:block">

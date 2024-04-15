@@ -13,7 +13,7 @@ const InputElement: React.FC<FormFieldProps> = ({
     <input
       type={type}
       placeholder={placeholder}
-      className="w-full bg-transparent font-diaType text-secondary"
+      className="w-full bg-transparent text-[14px] lg:text-[18px] font-diaType text-secondary"
       {...register(name, { valueAsNumber })}
     />
     {error && (

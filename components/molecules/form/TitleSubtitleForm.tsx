@@ -8,7 +8,7 @@ const TitleSubtitleForm = ({ title }: ITitleSubTitleFormProps) => {
       <Typography as="span" size="paragraph">
         {title}
       </Typography>
-      <div className="flex flex-col gap-0 font-spykDisplay">
+      <div className="flex flex-col pt-[12px] lg:pt-0 gap-0 font-spykDisplay">
         <Typography as="span" size="paragraphSecond">
           Auf mutige Ideen wartet die Welt.
         </Typography>

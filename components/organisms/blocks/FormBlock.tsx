@@ -34,13 +34,13 @@ const FormBlock = () => {
         >
           <div
             className={clsx(
-              'flex flex-col px-[20px] mt-[50px] lg:mt-0 py-8',
+              'flex flex-col px-[20px] lg:mt-0 py-8',
               modal.isSubmitted && 'hidden'
             )}
           >
             <div
               onClick={onCloseForm}
-              className="flex justify-end cursor-pointer"
+              className="mr-[12px] lg:mr-0 flex justify-end cursor-pointer"
             >
               <ImageElement
                 className="lg:w-[34px] lg:h-[34px] w-[25px] h-[25px]"
@@ -50,7 +50,7 @@ const FormBlock = () => {
                 src="./images/icons/Close.svg"
               />
             </div>
-            <div className="flex flex-col lg:px-[305px] pt-[32px] lg:pt-[28px] ">
+            <div className="flex flex-col lg:px-[305px] pt-[16px] lg:pt-[28px] ">
               <div className="lg:pt-[56px] lg:px-[56px] lg:max-w-[882px] lg:m-auto">
                 <div className="flex flex-col lg:gap-[12px] text-secondary">
                   <TitleSubtitleForm title={modal.titleModal} />
