@@ -34,7 +34,7 @@ const FormBlock = () => {
         >
           <div
             className={clsx(
-              'flex flex-col px-[20px] lg:mt-0 py-8',
+              'flex flex-col px-[20px] lg:mt-0  lg:py-8',
               modal.isSubmitted && 'hidden'
             )}
           >

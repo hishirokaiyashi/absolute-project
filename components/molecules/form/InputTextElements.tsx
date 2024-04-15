@@ -53,18 +53,17 @@ const InputTextElements = () => {
         error={errors.name}
       />
       <InputTextElement
+        type="text"
+        placeholder="Company"
+        name="company"
+        register={register}
+      />
+      <InputTextElement
         type="email"
         placeholder="Email*"
         name="email"
         register={register}
         error={errors.email}
-      />
-
-      <InputTextElement
-        type="text"
-        placeholder="Company"
-        name="company"
-        register={register}
       />
       <InputTextElement
         type="text"
@@ -90,7 +89,7 @@ const InputTextElements = () => {
           />
         </div>
       </div>
-      <div className="mt-[64px] lg:mt-[135px] w-full flex justify-center items-center">
+      <div className="mt-[56px] lg:mt-[135px] w-full flex justify-center items-center">
         <ButtonWithIcon
           type="submit"
           icon={
