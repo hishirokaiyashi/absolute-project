@@ -25,7 +25,7 @@ export const ButtonWithIcon = ({
       <Typography as="span" size="buttonSecond">
         {children}
       </Typography>
-      <div className={className}>{icon}</div>
+      {icon}
     </button>
   );
 };

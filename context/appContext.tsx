@@ -5,20 +5,21 @@ import { ReactNode, createContext, useState } from 'react';
 
 const appState: IAppState = {
   modal: {
+    isSubmitted: false,
     position: 0,
     open: false,
     onClose: null,
-    titleModal: ''
-  }
+    titleModal: '',
+  },
 };
 const AppContext = createContext<IAppContext | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [state, setState] = useState({ ...appState });
   const updateState = (newState: Partial<IAppState>) => {
-    setState(prevState => ({
+    setState((prevState) => ({
       ...prevState,
-      ...newState
+      ...newState,
     }));
   };
 

@@ -2,6 +2,7 @@ import { MouseEventHandler } from 'react';
 export interface IAppState {
   modal: {
     position: number;
+    isSubmitted: boolean;
     titleModal: string;
     open: boolean;
     onClose: MouseEventHandler<HTMLButtonElement> | null;

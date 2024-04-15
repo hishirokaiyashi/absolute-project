@@ -1,7 +1,7 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import Typography from './Typography';
 import clsx from 'clsx';
+import { useEffect, useState } from 'react';
+import Typography from './Typography';
 
 interface ICustomCursorProps {
   cursorTitle?: string;
@@ -19,7 +19,7 @@ const CustomCursor = ({
   cursorTitle,
   SelectedId,
   isHovering,
-  subTitle
+  subTitle,
 }: ICustomCursorProps) => {
   // Reference to the cursor element
   // State to track cursor position
@@ -31,7 +31,7 @@ const CustomCursor = ({
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({
         x: e.clientX,
-        y: e.clientY
+        y: e.clientY,
       });
     };
 

@@ -10,14 +10,18 @@ const ContainerSelectButton = () => {
     AppContext
   ) as IAppContext;
 
-  const onOpenForm = () => {
+  const onOpenForm = (title: string) => {
+    document.body.style.overflowY = 'hidden';
+
     updateState &&
       updateState({
         modal: {
           ...modal,
           position: window.pageYOffset,
-          open: true
-        }
+          open: true,
+          titleModal: title,
+          isSubmitted: false,
+        },
       });
   };
   const [isHoverItem, setIsHoverItem] = useState<number>();
@@ -27,9 +31,7 @@ const ContainerSelectButton = () => {
   const handleMouseLeave = () => {
     setIsHoverItem(undefined);
   };
-  // const handleOpenForm = () => {
-  //   action(!isOpenForm);
-  // };
+
   return (
     <ul className=" gap-[8px] pb-[38px] pt-[50px] lg:gap-[24px] lg:pt-[100px] lg:pb-0 flex lg:items-center flex-col cursor-pointer justify-center ">
       {ListElementButton.map((el, index) => {
@@ -37,7 +39,7 @@ const ContainerSelectButton = () => {
           <li
             onMouseOver={() => handleSetHoverItem(index)}
             onMouseLeave={handleMouseLeave}
-            onClick={onOpenForm}
+            onClick={() => onOpenForm(el.title)}
             key={index}
             className={clsx(
               'relative group  flex items-center justify-between transition-opacity duration-700 cursor-pointer hover:cursor-pointer',

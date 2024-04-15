@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         primary: '#1c1c1c',
         secondary: '#ececec',
+        errors: '#FF4D00',
       },
       fontFamily: {
         cameraPlain: ['var(--font-cameraPlain)'],

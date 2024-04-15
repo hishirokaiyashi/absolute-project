@@ -23,7 +23,7 @@ export interface IButton extends IClassName {
   action?: () => void;
 }
 export interface IListELementButtons {
-  title?: string;
+  title: string;
 }
 
 export interface ICursorDescription {

@@ -1,6 +1,4 @@
-import InputFormElement from '@/components/atoms/commons/InputElement';
 import Typography from '@/components/atoms/commons/Typography';
-import React from 'react';
 interface ITitleSubTitleFormProps {
   title: string;
 }
@@ -10,7 +8,7 @@ const TitleSubtitleForm = ({ title }: ITitleSubTitleFormProps) => {
       <Typography as="span" size="paragraph">
         {title}
       </Typography>
-      <div className="flex flex-col font-spykDisplay">
+      <div className="flex flex-col gap-0 font-spykDisplay">
         <Typography as="span" size="paragraphSecond">
           Auf mutige Ideen wartet die Welt.
         </Typography>
