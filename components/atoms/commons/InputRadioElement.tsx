@@ -23,26 +23,26 @@ const InputRadioElement: React.FC<FormFieldRadioProps> = ({
           <div className="hidden lg:block">
             <label
               htmlFor={name}
-              className="flex text-[14px] items-center gap-2 text-secondary"
+              className="flex text-[18px] items-center gap-2 text-secondary"
             >
-              Ja, ich stimme den
+              Yes, I agree to
               <a href="" className="underline underline-offset-1">
                 <Typography as="span" size="linkHref">
-                  AGB
+                  the terms and conditions
                 </Typography>
               </a>
-              und der
+              and the
               <a href="" className="underline underline-offset-1">
                 <Typography as="span" size="linkHref">
-                  Datenschutzerklärung
+                  Data protection
                 </Typography>
               </a>
-              zu.
             </label>
           </div>
           <div className="text-wrap lg:hidden">
             <Typography as="span" size="linkHref">
-              Ja, ich stimme den AGB’s und der Datenschutzerklärung zu.
+              Yes, I agree to the terms and conditions and the data protection
+              declaration.
             </Typography>
           </div>
         </div>

@@ -32,7 +32,7 @@ const InputTextElements = () => {
       });
   };
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
-    // console.log('SUCCESS', data);
+    console.log('SUCCESS', data);
     try {
       handleSubmmitForm(true);
     } catch (error) {
