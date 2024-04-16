@@ -1,28 +1,17 @@
 'use client';
 import Typography from '@/components/atoms/commons/Typography';
-import AppContext from '@/context/appContext';
 import { ListElementButton } from '@/data/ListElementButtons';
-import { IAppContext } from '@/models/appInterface';
 import clsx from 'clsx';
-import { useContext, useState } from 'react';
-const ContainerSelectButton = () => {
-  const { modal, updateState }: IAppContext = useContext(
-    AppContext
-  ) as IAppContext;
-
+import { useState } from 'react';
+interface ContainerSelectButtonProps {
+  handleOpenModal: (title: string) => void;
+}
+const ContainerSelectButton = ({
+  handleOpenModal,
+}: ContainerSelectButtonProps) => {
   const onOpenForm = (title: string) => {
     document.body.style.overflowY = 'hidden';
-
-    updateState &&
-      updateState({
-        modal: {
-          ...modal,
-          position: window.pageYOffset,
-          open: true,
-          titleModal: title,
-          isSubmitted: false,
-        },
-      });
+    handleOpenModal(title);
   };
   const [isHoverItem, setIsHoverItem] = useState<number>();
   const handleSetHoverItem = (data: number) => {

@@ -36,3 +36,10 @@ export interface IListElementSticky {
   cursorTitle: string;
   subTitle: string;
 }
+
+export interface ListTeamMember {
+  src: string;
+  srcNoBg: string;
+  name: string;
+  description: string[];
+}

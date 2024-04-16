@@ -1,4 +1,3 @@
-import { ImageElement } from '@/components/atoms/commons/ImageElement';
 import AbsoluteIcon from '@/components/atoms/commons/icons/AbsoluteIcon';
 import Section from '@/components/molecules/commons/Section';
 import VideoPlayer from '@/components/molecules/commons/VideoPlayer';

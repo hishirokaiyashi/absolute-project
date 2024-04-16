@@ -4,6 +4,7 @@ export type SizeOptions =
   | 'h2'
   | 'h3'
   | 'h4'
+  | 'h5'
   | 'small'
   | 'strong'
   | 'button'
@@ -46,6 +47,7 @@ const sizeClassNames: TSizeClassNames = {
     'text-60x lg:text-200x text-center text-secondary font-black font-cameraPlain',
   h3: 'text-secondary text-40x lg:text-120x text-center ',
   h4: 'text-24x lg:text-80x text-center text-secondary font-spykDisplay',
+  h5: 'text-[24px] lg:text-[80px] leading-[3rem] lg:leading-[6rem]',
   small: 'text-base',
   strong: 'text-lg font-medium',
   labelError: 'lg:text-sm text-xs leading-[18px] tracking-[0.01em]',

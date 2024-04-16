@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Move all of variables here directly to tailwindcss */
-
 @layer base {
   html,
   body {
@@ -11,6 +9,15 @@
   }
 }
 @layer components {
-  /* For Webkit-based browsers (Chrome, Safari and Opera) */
-
+  /* .team__animation__content {
+    @apply animate-[scroll_4s_linear_infinite];
+  } */
+}
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }

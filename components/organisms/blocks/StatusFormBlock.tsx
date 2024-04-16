@@ -22,15 +22,6 @@ const StatusFormBlock = ({ isSuccess }: StatusFormBlockProps) => {
   };
   return (
     <div className="py-4 px-[40px] lg:py-8 lg:px-[54px] h-screen">
-      <div onClick={onCloseForm} className="flex justify-end cursor-pointer">
-        <ImageElement
-          className="lg:h-[22px] lg:w-[22px]"
-          fill={false}
-          width={22}
-          height={22}
-          src="./images/icons/Close.svg"
-        />
-      </div>
       <div className="flex-col justify-center items-center lg:mt-[241px]">
         <div className="flex justify-center">
           <ImageElement

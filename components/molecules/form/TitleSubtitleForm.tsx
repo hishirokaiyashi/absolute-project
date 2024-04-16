@@ -12,6 +12,7 @@ const TitleSubtitleForm = ({ title }: ITitleSubTitleFormProps) => {
         <Typography as="span" size="paragraphSecond">
           Auf mutige Ideen wartet die Welt.
         </Typography>
+
         <Typography as="span" size="paragraphSecond">
           Wir bringen dein Produkt zum Fliegen.
         </Typography>

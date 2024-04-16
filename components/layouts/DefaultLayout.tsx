@@ -1,6 +1,6 @@
 import AppHeader from '@/components/organisms/commons/AppHeader';
 import { ReactNode } from 'react';
-import FormBlock from '../organisms/blocks/FormBlock';
+// import FormBlock from '../organisms/blocks/FormBlock';
 
 export interface DefaultLayoutProps {
   children: ReactNode;
@@ -13,7 +13,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       <main id="main" className="relative w-full z-1 bg-primary">
         {children}
       </main>
-      <FormBlock />
+      {/* <FormBlock /> */}
       {/* MODAL */}
       {/* <AppFooter /> */}
     </>

@@ -1,6 +1,5 @@
 import { IClassName } from '@/models/interfaces';
 import Image from 'next/image';
-import { twMerge } from 'tailwind-merge';
 const blurDataURL =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=';
 
@@ -23,9 +22,8 @@ export const ImageElement = ({
 }: IImageElementProps) => {
   return (
     <>
-      {fill ? (
-        <div className={twMerge('relative', className)}>
-          {src && (
+      {fill
+        ? src && (
             <Image
               alt={alt}
               placeholder="blur"
@@ -36,21 +34,18 @@ export const ImageElement = ({
               quality={100}
               className="object-cover w-full h-full"
             />
+          )
+        : src && (
+            <Image
+              alt={alt}
+              placeholder="blur"
+              blurDataURL={blurDataURL}
+              quality={100}
+              src={src}
+              className={className}
+              {...props}
+            />
           )}
-        </div>
-      ) : (
-        src && (
-          <Image
-            alt={alt}
-            placeholder="blur"
-            blurDataURL={blurDataURL}
-            quality={100}
-            src={src}
-            className={className}
-            {...props}
-          />
-        )
-      )}
     </>
   );
 };
