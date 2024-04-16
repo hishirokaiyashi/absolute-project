@@ -17,7 +17,7 @@ const WorkBlock = () => {
     setHoverItemCursor('');
   };
   const [activeCount, setActiveCount] = useState(true);
-  const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  const [currentItemIndex, setCurrentItemIndex] = useState(1);
   const myRef = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
     const options: IntersectionObserverInit = {
@@ -31,16 +31,37 @@ const WorkBlock = () => {
         const id = entry.target.id;
         // Tìm chỉ số của phần tử trong mảng myRef bằng cách tìm vị trí của ID
         const index = myRef.current.findIndex(ref => ref.id === id);
-        //
+
         if (entry.isIntersecting) {
+          myRef.current.forEach((ref, idx) => {
+            if (idx === index) {
+              ref.setAttribute('data-active', 'true');
+            } else {
+              ref.setAttribute('data-active', 'false');
+            }
+          });
           setCurrentItemIndex(index + 1);
         } else {
-          setCurrentItemIndex(index);
+          // Kiểm tra nếu myRef.current[index] có data-active là true thì mới thực hiện đổi data-active
+          const isActive =
+            myRef.current[index].getAttribute('data-active') === 'true';
+          if (isActive) {
+            setCurrentItemIndex(index);
+
+            // Đặt thuộc tính data-active của myRef.current[index] thành false
+            myRef.current[index].setAttribute('data-active', 'false');
+
+            // Kiểm tra nếu index - 1 không là số âm và myRef.current[index - 1] tồn tại
+            if (index > 0 && myRef.current[index - 1]) {
+              // Đặt thuộc tính data-active của myRef.current[index - 1] thành true
+              myRef.current[index - 1].setAttribute('data-active', 'true');
+            } else {
+              setCurrentItemIndex(1);
+            }
+          }
         }
-        // console.log(myRef.current[index]);
       });
     }, options);
-
     myRef.current.forEach(el => {
       if (el) {
         observer.observe(el);
