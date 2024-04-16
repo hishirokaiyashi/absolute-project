@@ -79,7 +79,7 @@ const InputTextElements = () => {
         register={register}
         error={errors.news}
       />
-      <div className="lg:mt-[48px]">
+      <div className="mt-[40px] lg:mt-[48px]">
         <div className="w-fit">
           <InputRadioElement
             type="checkbox"
@@ -89,7 +89,7 @@ const InputTextElements = () => {
           />
         </div>
       </div>
-      <div className="mt-[56px] lg:mt-[135px] w-full flex justify-center items-center">
+      <div className="mt-[21px] lg:mt-[135px] w-full flex justify-center items-center">
         <ButtonWithIcon
           type="submit"
           icon={

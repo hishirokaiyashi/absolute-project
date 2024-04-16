@@ -17,38 +17,40 @@ const InputRadioElement: React.FC<FormFieldRadioProps> = ({
             {...register(name, { required: 'Please enter your first name.' })}
           />
 
-          <span className="inline-block mt-[7px] lg:mt-[7px] w-[16px] h-[16px] lg:w-[12px] lg:h-[12px] border-2 rounded-full  border-secondary bg-primary peer-checked:border-2 peer-checked:border-secondary peer-checked:bg-secondary"></span>
+          <span className="inline-block mt-[5px] lg:mt-[7px] w-[16px] h-[16px] lg:w-[12px] lg:h-[12px] border-2 rounded-full  border-secondary bg-primary peer-checked:border-2 peer-checked:border-secondary peer-checked:bg-secondary"></span>
         </label>
         <div className="flex flex-1 gap-[4px] items-center text-nowrap">
-          <div className="hidden lg:block">
-            <label
-              htmlFor={name}
-              className="flex text-[18px] items-center gap-2 text-secondary"
-            >
-              Yes, I agree to
+          <label
+            htmlFor={name}
+            className="flex lg:flex-row flex-col text-[14px] lg:text-[18px] gap-0 lg:gap-2 text-secondary"
+          >
+            <div className="flex gap-1">
+              Ja, ich stimme den
               <a href="" className="underline underline-offset-1">
                 <Typography as="span" size="linkHref">
-                  the terms and conditions
+                  AGB
                 </Typography>
               </a>
-              and the
+              ’s und der
+            </div>
+            <div className="flex gap-1">
               <a href="" className="underline underline-offset-1">
                 <Typography as="span" size="linkHref">
-                  Data protection
+                  Datenschutzerklärung
                 </Typography>
               </a>
-            </label>
-          </div>
-          <div className="text-wrap lg:hidden">
+              zu.
+            </div>
+          </label>
+          {/* <div className="text-wrap lg:hidden">
             <Typography as="span" size="linkHref">
-              Yes, I agree to the terms and conditions and the data protection
-              declaration.
+              Ja, ich stimme den AGB und der Datenschutzerklärung zu.
             </Typography>
-          </div>
+          </div> */}
         </div>
       </div>
       {error && (
-        <div className="lg:mt-[16px] text-errors font-diaType">
+        <div className="lg:mt-[16px] mt-[12px] text-errors font-diaType">
           <Typography as="span" size="labelError">
             {error.message}
           </Typography>

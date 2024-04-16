@@ -3,12 +3,12 @@ import { FormData } from './type/type';
 import validator from 'validator';
 
 export const UserSchema: ZodType<FormData> = z.object({
-  name: z.string().trim().min(1, { message: 'This field is required' }),
+  name: z.string().trim().min(1, { message: 'Dieses Feld ist erforderlich' }),
   email: z
     .string()
     .trim()
-    .min(1, { message: 'This field is required' })
-    .email({ message: 'Invalid email format' }),
+    .min(1, { message: 'Dieses Feld ist erforderlich' })
+    .email({ message: 'ungültiges Email-Format' }),
   company: z.string().trim().optional(),
   phoneNumber: z
     .string()
@@ -25,8 +25,8 @@ export const UserSchema: ZodType<FormData> = z.object({
         message: 'Invalid phone number',
       }
     ),
-  news: z.string().trim().min(1, { message: 'This field is required' }),
+  news: z.string().trim().min(1, { message: 'Dieses Feld ist erforderlich' }),
   acceptPolicy: z.boolean().refine((val) => val === true, {
-    message: 'Please read and accept the terms and conditions',
+    message: 'Bitte akzeptiere die Datenschutz und AGB’s.',
   }),
 });
