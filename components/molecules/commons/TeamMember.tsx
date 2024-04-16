@@ -1,6 +1,8 @@
 'use client';
 import { ImageElement } from '@/components/atoms/commons/ImageElement';
 import Typography from '@/components/atoms/commons/Typography';
+import { blurDataURL } from '@/lib/utils';
+import Image from 'next/image';
 import React, { useState } from 'react';
 interface TeamMemberProps {
   src: string;
@@ -19,11 +21,26 @@ const TeamMember = ({ src, srcNoBg, name, description }: TeamMemberProps) => {
         onMouseLeave={() => setIsHoverImage(false)}
       >
         <div className="relative pt-[107%]">
-          <ImageElement fill={true} src={src} />
+          <Image
+            alt=""
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            src={src}
+            fill
+            quality={100}
+            className="object-cover w-full h-full"
+          />
+          <Image
+            alt=""
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+            src={srcNoBg}
+            fill
+            quality={100}
+            className="object-cover w-full h-full"
+          />
         </div>
-        <div className="">
-          <ImageElement fill={true} src={srcNoBg} />
-        </div>
+
         {isHoverImage && (
           <>
             <div className="absolute z-[2] w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
