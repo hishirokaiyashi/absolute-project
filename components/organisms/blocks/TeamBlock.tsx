@@ -1,11 +1,15 @@
-import { ImageElement } from '@/components/atoms/commons/ImageElement';
+'use client';
+import { ButtonWithIcon } from '@/components/atoms/commons/Button';
 import Typography from '@/components/atoms/commons/Typography';
 import Section from '@/components/molecules/commons/Section';
 import TeamMember from '@/components/molecules/commons/TeamMember';
 import TitleDescription from '@/components/molecules/commons/TitleDescription';
 import { ListTeamMembers } from '@/data/ListTeamMembers';
+import clsx from 'clsx';
+import { useState } from 'react';
 
 const TeamBlock = () => {
+  const [isHoverMember, setIsHoverMember] = useState<string>();
   return (
     <Section
       id="TeamBlock"
@@ -21,10 +25,20 @@ const TeamBlock = () => {
           }
         />
       </div>
-      <div className="grid w-full lg:grid-cols-3 lg:grid-rows-3 gap-y-[24px] ">
+      <div className="grid w-full grid-cols-1 grid-rows-1 lg:grid-cols-3 lg:grid-rows-3 gap-y-[24px] ">
         {ListTeamMembers?.map((member, index) => {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              className={clsx(
+                'z-1 opacity-100 cursor-pointer transition-opacity duration-500 ease-out',
+                typeof isHoverMember !== 'undefined' &&
+                  isHoverMember !== `member-${index}` &&
+                  'lg:opacity-15'
+              )}
+              onMouseOver={() => setIsHoverMember(`member-${index}`)}
+              onMouseLeave={() => setIsHoverMember(undefined)}
+            >
               <TeamMember
                 src={member.src}
                 name={member.name}
@@ -34,37 +48,34 @@ const TeamBlock = () => {
             </div>
           );
         })}
-        {/* <div className="flex flex-col lg:gap-[8px]">
-          <div className="relative">
-            <ImageElement
-              className=" h-[80px] w-full lg:h-[527px] object-cover"
-              fill={false}
-              width={491}
-              height={527}
-              src="/images/imageElements/teamMembers/Cello.webp"
-            />
-            <div className="absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-              <ul className="w-[1800px] absolute flex p-0 m-0 justify-around flex-shrink-0 gap-[40px] font-black animate-[scroll_6s_linear_infinite] text-secondary text-nowrap font-cameraPlain">
-                {['Graphic', 'BRanding', 'Wording', 'Design']?.map(
-                  (member, index) => {
-                    return (
-                      <li key={index}>
-                        <Typography as="h4" size="h5">
-                          {member}
-                        </Typography>
-                      </li>
-                    );
-                  }
-                )}
-              </ul>
+        <div className="flex flex-col justify-between w-full py-[56px] px-[24px] lg:p-[30px]">
+          <div>
+            <div className="text-secondary uppercase max-w-[295px] font-cameraPlain pb-[32px] lg:pb-[24px] lg:max-w-[431px]">
+              <Typography as="h4" size="h5Second">
+                What about you?
+              </Typography>
+            </div>
+            <div>
+              <Typography>
+                Pitch Winner*in, Troubleshooter*in, Grafiktalent,
+                Detailverliebte*r, Aufgabenlöser*in, kreativer Geek? Sehr cool,
+                wir sollten uns kennenlernen.
+              </Typography>
             </div>
           </div>
-          <div>
-            <Typography as="span" size="paragraph">
-              Cello Angehrn
-            </Typography>
+          <div className="pb-[58px] pt-[56px] lg:pt-0 lg:pb-[30px]">
+            <ButtonWithIcon
+              type="button"
+              icon={
+                <div className="flex items-center">
+                  <span className="w-[16px] h-[16px] border-2 border-secondary block rounded-full right-4 top-1/2 transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></span>
+                </div>
+              }
+            >
+              LET&apos;S CONNECT
+            </ButtonWithIcon>
           </div>
-        </div> */}
+        </div>
       </div>
     </Section>
   );

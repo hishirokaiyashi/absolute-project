@@ -41,7 +41,6 @@ const InputCheckboxElement: React.FC<FormFieldRadioProps> = ({
             zu.
           </div>
         </label>
-        {/* </div> */}
       </div>
       {error && (
         <div className="lg:mt-[16px] mt-[12px] text-errors font-diaType">

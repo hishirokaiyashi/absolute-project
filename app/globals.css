@@ -9,9 +9,6 @@
   }
 }
 @layer components {
-  /* .team__animation__content {
-    @apply animate-[scroll_4s_linear_infinite];
-  } */
 }
 @keyframes scroll {
   from {

@@ -5,11 +5,13 @@ export type SizeOptions =
   | 'h3'
   | 'h4'
   | 'h5'
+  | 'h5Second'
   | 'small'
   | 'strong'
   | 'button'
   | 'buttonSecond'
   | 'labelError'
+  | 'labelImage'
   | 'linkHref'
   | 'paragraph'
   | 'paragraphSecond'
@@ -48,9 +50,12 @@ const sizeClassNames: TSizeClassNames = {
   h3: 'text-secondary text-40x lg:text-120x text-center ',
   h4: 'text-24x lg:text-80x text-center text-secondary font-spykDisplay',
   h5: 'text-[24px] lg:text-[80px] leading-[3rem] lg:leading-[6rem]',
+  h5Second:
+    'text-[40px] font-black leading-[2.25rem] lg:text-[56px] lg:leading-[3.5rem]',
   small: 'text-base',
   strong: 'text-lg font-medium',
   labelError: 'lg:text-sm text-xs leading-[18px] tracking-[0.01em]',
+  labelImage: 'text-[40px] leading-[3rem] lg:leading-[6rem] lg:text-[80px]',
   button:
     'text-24x lg:text-40x text-secondary font-normal text-wrap lg:text-nowrap lg:text-center font-spykDisplay',
   buttonSecond:
