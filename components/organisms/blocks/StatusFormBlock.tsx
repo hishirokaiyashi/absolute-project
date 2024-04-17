@@ -10,6 +10,7 @@ const StatusFormBlock = ({ isSuccess }: StatusFormBlockProps) => {
   const { modal, updateState }: IAppContext = useContext(
     AppContext
   ) as IAppContext;
+
   const onCloseForm = () => {
     updateState &&
       updateState({

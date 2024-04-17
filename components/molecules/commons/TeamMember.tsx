@@ -12,6 +12,7 @@ interface TeamMemberProps {
 }
 const TeamMember = ({ src, srcNoBg, name, description }: TeamMemberProps) => {
   const [isHoverImage, setIsHoverImage] = useState(false);
+
   return (
     <>
       <div
@@ -27,7 +28,7 @@ const TeamMember = ({ src, srcNoBg, name, description }: TeamMemberProps) => {
             src={src}
             fill
             quality={100}
-            className="object-cover w-full z-1 h-[369px] lg:h-[527px]"
+            className="object-cover object-center w-full z-1 h-[369px] lg:h-[527px]"
           />
           <Image
             alt=""
@@ -36,42 +37,36 @@ const TeamMember = ({ src, srcNoBg, name, description }: TeamMemberProps) => {
             src={srcNoBg}
             fill
             quality={100}
-            className="object-cover w-full z-[-1] lg:z-[3] h-[369px] lg:h-[527px]"
+            className="object-cover object-center w-full z-[-1] lg:z-[3] h-[369px] lg:h-[527px]"
           />
         </div>
-
-        {/* {isHoverImage && (
-          <div className="absolute w-full -translate-x-1/2 -translate-y-1/2 lg:z-[2] top-1/2 left-1/2">
-            <ul className="w-[1800px] uppercase absolute flex p-0 m-0 justify-around flex-shrink-0 gap-[40px] font-black animate-[scroll_4s_linear_infinite] text-secondary text-nowrap font-cameraPlain">
-              {description?.map((member, index) => {
-                return (
-                  <li key={index}>
-                    <Typography as="h4" size="h5">
-                      {member}
-                    </Typography>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        )} */}
-
         <div
           className={clsx(
-            'absolute w-[2000px] pointer-events-none -translate-x-1/2 -translate-y-1/2 z-2 top-1/2 left-1/2',
+            'absolute w-[2000px] h-[96px] gap-[40px] pointer-events-none -translate-x-[16px] -translate-y-1/2 z-2 top-1/2 ',
             isHoverImage ? 'lg:opacity-100 z-0' : 'lg:opacity-0'
           )}
         >
-          <ul className=" gap-[19px] uppercase absolute flex p-0 m-0 justify-around flex-shrink-0  font-black animate-[scroll_5s_linear_infinite] text-secondary text-nowrap font-cameraPlain lg:gap-[40px]">
-            {description?.map((member, index) => {
-              return (
-                <li key={index} className="font-black font-cameraPlain">
+          <ul className="gap-[19px] flex-row uppercase absolute flex justify-around flex-shrink-0 font-black text-secondary text-nowrap font-cameraPlain lg:gap-[40px] ">
+            <li className="gap-[19px] flex animate-[scroll_10s_linear_infinite] lg:gap-[40px]">
+              {description?.map((member, index) => {
+                return (
+                  <div key={index} className="font-black font-cameraPlain">
+                    <Typography as="h4" size="labelImage">
+                      {member}
+                    </Typography>
+                  </div>
+                );
+              })}
+            </li>
+            <li className="gap-[19px] flex animate-[scroll2_10s_linear_infinite] lg:gap-[40px]">
+              {description?.map((member, index) => (
+                <div key={index} className="font-black font-cameraPlain">
                   <Typography as="h4" size="labelImage">
                     {member}
                   </Typography>
-                </li>
-              );
-            })}
+                </div>
+              ))}
+            </li>
           </ul>
         </div>
       </div>
@@ -85,3 +80,21 @@ const TeamMember = ({ src, srcNoBg, name, description }: TeamMemberProps) => {
 };
 
 export default TeamMember;
+
+{
+  /* {isHoverImage && (
+          <div className="absolute w-full -translate-x-1/2 -translate-y-1/2 lg:z-[2] top-1/2 left-1/2">
+            <ul className="w-[1800px] uppercase absolute flex p-0 m-0 justify-around flex-shrink-0 gap-[40px] font-black animate-[scroll_4s_linear_infinite] text-secondary text-nowrap font-cameraPlain">
+              {description?.map((member, index) => {
+                return (
+                  <li key={index}>
+                    <Typography as="h4" size="h5">
+                      {member}
+                    </Typography>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )} */
+}

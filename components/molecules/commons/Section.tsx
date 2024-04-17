@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/utils';
 import { HTMLAttributes, ReactNode, forwardRef } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -15,7 +15,7 @@ const Section = forwardRef<HTMLDivElement, IProps>(
     return (
       <section
         ref={ref}
-        className={cn('box-border', container && clsContainer, className)}
+        className={twMerge(container && clsContainer, className)}
       >
         {children}
       </section>

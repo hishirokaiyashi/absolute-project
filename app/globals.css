@@ -8,13 +8,20 @@
     @apply p-0 m-0 scroll-smooth;
   }
 }
-@layer components {
-}
+
 @keyframes scroll {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 40px));
+  }
+}
+@keyframes scroll2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(calc(-100% - 40px));
   }
 }

@@ -22,7 +22,7 @@ const ContainerSelectButton = ({
   };
 
   return (
-    <ul className=" gap-[8px] pb-[38px] pt-[50px] lg:gap-[24px] lg:pt-[100px] lg:pb-0 flex lg:items-center flex-col cursor-pointer justify-center ">
+    <ul className="gap-[8px] pb-[38px] pt-[50px] lg:gap-[24px] lg:pt-[100px] lg:pb-0 flex lg:items-center flex-col cursor-pointer justify-center ">
       {ListElementButton.map((el, index) => {
         return (
           <li

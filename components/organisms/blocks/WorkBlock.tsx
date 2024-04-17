@@ -8,7 +8,10 @@ import TitleDescription from '@/components/molecules/commons/TitleDescription';
 import { ListElementSticky } from '@/data/ListElementSticky';
 import { useEffect, useRef, useState } from 'react';
 const WorkBlock = () => {
-  const [hoverItemCursor, setHoverItemCursor] = useState('');
+  const [hoverItemCursor, setHoverItemCursor] = useState<string>('');
+  const [activeCount, setActiveCount] = useState(true);
+  const [currentItemIndex, setCurrentItemIndex] = useState(1);
+
   const handleAddCursorTile = (data: string) => {
     setHoverItemCursor(data);
   };
@@ -16,29 +19,23 @@ const WorkBlock = () => {
   const handleRemoveCursorTile = () => {
     setHoverItemCursor('');
   };
-  const [activeCount, setActiveCount] = useState(true);
-  const [currentItemIndex, setCurrentItemIndex] = useState(1);
   const myRef = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
     const options: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5 // 0.5 means when half of the element is visible
+      threshold: 0.5, // 0.5 means when half of the element is visible
     };
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         const id = entry.target.id;
         // Tìm chỉ số của phần tử trong mảng myRef bằng cách tìm vị trí của ID
-        const index = myRef.current.findIndex(ref => ref.id === id);
+        const index = myRef.current.findIndex((ref) => ref.id === id);
 
         if (entry.isIntersecting) {
           myRef.current.forEach((ref, idx) => {
-            if (idx === index) {
-              ref.setAttribute('data-active', 'true');
-            } else {
-              ref.setAttribute('data-active', 'false');
-            }
+            ref.setAttribute('data-active', (idx === index).toString());
           });
           setCurrentItemIndex(index + 1);
         } else {
@@ -62,15 +59,16 @@ const WorkBlock = () => {
         }
       });
     }, options);
-    myRef.current.forEach(el => {
+    myRef.current.forEach((el) => {
       if (el) {
         observer.observe(el);
       }
     });
+    console.log('aa');
 
     // Clean up
     return () => {
-      myRef.current.forEach(el => {
+      myRef.current.forEach((el) => {
         if (el) {
           observer.unobserve(el);
         }
@@ -78,6 +76,7 @@ const WorkBlock = () => {
       // observer.disconnect();
     };
   }, [myRef]);
+
   return (
     <Section
       id="WorkBlock"
@@ -94,7 +93,7 @@ const WorkBlock = () => {
           return (
             <div
               key={index}
-              ref={ref => {
+              ref={(ref) => {
                 if (ref) {
                   myRef.current[index] = ref;
                 }
@@ -109,7 +108,6 @@ const WorkBlock = () => {
                   src={el.src}
                   fill={true}
                   // className="h-screen "
-                  sizes="100vw"
                 />
               </div>
               <CustomCursor
@@ -133,12 +131,13 @@ const WorkBlock = () => {
                 <Typography as="span">{`${currentItemIndex}/${ListElementSticky.length}`}</Typography>
               )}
             </div>
-            <div className="absolute bottom-0 w-full pointer-events-auto z-5 lg:w-auto lg:left-1/2 lg:-translate-x-1/2 lg:bottom-0 lg:py-4">
-              <div className="flex justify-center lg:block py-[32px] lg:py-[12px]">
+            <div className="absolute bottom-0 w-full z-5 lg:w-auto lg:left-1/2 lg:-translate-x-1/2 lg:bottom-0 lg:py-4">
+              <div className="flex justify-center py-[32px] lg:py-[12px] lg:block">
                 <ButtonWithIcon
                   icon={
                     <div className="flex items-center">
-                      <span className="w-[16px] h-[16px] border-2 border-secondary block rounded-full right-4 top-1/2 transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></span>
+                      {/* Check */}
+                      <div className="w-[16px] h-[16px] border-2 border-secondary rounded-full right-4 top-1/2 transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></div>
                     </div>
                   }
                 >

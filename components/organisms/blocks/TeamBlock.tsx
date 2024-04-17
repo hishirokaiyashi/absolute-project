@@ -48,7 +48,7 @@ const TeamBlock = () => {
             </div>
           );
         })}
-        <div className="flex flex-col justify-between w-full py-[56px] px-[24px] lg:p-[30px]">
+        <div className="flex flex-col justify-between w-full py-[56px] lg:px-[24px] lg:p-[30px]">
           <div>
             <div className="text-secondary uppercase max-w-[295px] font-cameraPlain pb-[32px] lg:pb-[24px] lg:max-w-[431px]">
               <Typography as="h4" size="h5Second">

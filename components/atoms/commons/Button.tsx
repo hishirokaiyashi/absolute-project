@@ -1,8 +1,7 @@
-import { IClassName } from '@/models/interfaces';
 import { ReactNode } from 'react';
 import Typography from './Typography';
 
-interface ButtonWithIconProps extends IClassName {
+interface ButtonWithIconProps {
   icon: ReactNode;
   children?: string;
   type?: 'button' | 'submit' | 'reset';
@@ -10,7 +9,6 @@ interface ButtonWithIconProps extends IClassName {
 }
 
 export const ButtonWithIcon = ({
-  className,
   action,
   icon,
   children,
