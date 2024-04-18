@@ -14,7 +14,7 @@ const TeamBlock = () => {
     <Section
       id="TeamBlock"
       container={true}
-      className="flex flex-col overflow-x-hidden  items-center justify-center mt-[200px] lg:mt-60"
+      className="flex flex-col overflow-x-hidden items-center justify-center mt-[200px] lg:mt-60"
     >
       <div className="">
         <TitleDescription
@@ -34,12 +34,13 @@ const TeamBlock = () => {
                 'z-1 opacity-100 cursor-pointer transition-opacity duration-500 ease-out',
                 typeof isHoverMember !== 'undefined' &&
                   isHoverMember !== `member-${index}` &&
-                  'lg:opacity-15'
+                  'lg:opacity-15',
               )}
               onMouseOver={() => setIsHoverMember(`member-${index}`)}
               onMouseLeave={() => setIsHoverMember(undefined)}
             >
               <TeamMember
+                positionImage={index}
                 src={member.src}
                 name={member.name}
                 description={member.description}
@@ -48,27 +49,34 @@ const TeamBlock = () => {
             </div>
           );
         })}
-        <div className="flex flex-col justify-between w-full py-[56px] lg:px-[24px] lg:p-[30px]">
-          <div>
-            <div className="text-secondary uppercase max-w-[295px] font-cameraPlain pb-[32px] lg:pb-[24px] lg:max-w-[431px]">
-              <Typography as="h4" size="h5Second">
+        <div
+          className={clsx(
+            'z-1 flex flex-col opacity-100 transition-opacity duration-500 ease-out justify-between w-full cursor-pointer py-[56px] lg:px-[24px] lg:p-[30px]',
+            typeof isHoverMember !== 'undefined' &&
+              isHoverMember !== `connection-element-grid` &&
+              'lg:opacity-15',
+          )}
+          onMouseOver={() => setIsHoverMember(`connection-element-grid`)}
+          onMouseLeave={() => setIsHoverMember(undefined)}
+        >
+          <div className="flex flex-col gap-[32px] lg:gap-[24px]">
+            <div className="text-secondary uppercase max-w-[295px] font-cameraPlain lg:max-w-[431px]">
+              <Typography as="p" size="h5Second">
                 What about you?
               </Typography>
             </div>
-            <div>
-              <Typography>
-                Pitch Winner*in, Troubleshooter*in, Grafiktalent,
-                Detailverliebte*r, Aufgabenlöser*in, kreativer Geek? Sehr cool,
-                wir sollten uns kennenlernen.
-              </Typography>
-            </div>
+            <Typography as="p" size="paragraph">
+              Pitch Winner*in, Troubleshooter*in, Grafiktalent,
+              Detailverliebte*r, Aufgabenlöser*in, kreativer Geek? Sehr cool,
+              wir sollten uns kennenlernen.
+            </Typography>
           </div>
           <div className="pb-[58px] pt-[56px] lg:pt-0 lg:pb-[30px]">
             <ButtonWithIcon
               type="button"
               icon={
                 <div className="flex items-center">
-                  <span className="w-[16px] h-[16px] border-2 border-secondary block rounded-full right-4 top-1/2 transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></span>
+                  <span className="w-[16px] h-[16px] ml-4 border-2 border-secondary rounded-full transition-colors group-hover:bg-secondary"></span>
                 </div>
               }
             >

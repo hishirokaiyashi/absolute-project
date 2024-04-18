@@ -25,11 +25,11 @@ const ProjectBlock = () => {
       <Section
         id="ProjectBlock"
         container
-        className="relative lg:mt-60 mt-[100px] "
+        className="relative mt-[100px] lg:mt-60"
       >
-        <div className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center">
           <ImageElement
-            className="pb-[15px] lg:pb-[53px] h-[80px] w-[68px] lg:h-[240px] lg:w-[240px]"
+            className="pb-[15px] h-[80px] w-[68px] lg:h-[240px] lg:w-[240px] lg:pb-[53px]"
             fill={false}
             width={200}
             height={240}
@@ -45,7 +45,9 @@ const ProjectBlock = () => {
           <div className="pt-[38px] lg:pt-20">
             <ButtonWithIcon
               icon={
-                <span className="w-[16px] h-[16px] lg:w-[18px] lg:h-[18px] border-2 border-secondary block rounded-full right-4 top-1/2  transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></span>
+                <div className="flex items-center">
+                  <span className="w-[16px] h-[16px] ml-4 border-2 border-secondary rounded-full transition-colors group-hover:bg-secondary"></span>
+                </div>
               }
             >
               light up fire

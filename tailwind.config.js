@@ -32,6 +32,9 @@ module.exports = {
       maxWidth: {
         maxWidthLayout: 'var(--container-layout-px)',
       },
+      animation: {
+        infiniteText: 'scroll 10s linear infinite',
+      },
       fontSize: {
         // DESKTOP ONLY
         '380x': [

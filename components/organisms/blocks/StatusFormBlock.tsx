@@ -1,28 +1,11 @@
 import { ImageElement } from '@/components/atoms/commons/ImageElement';
 import Typography from '@/components/atoms/commons/Typography';
-import AppContext from '@/context/appContext';
-import { IAppContext } from '@/models/appInterface';
-import React, { useContext } from 'react';
 interface StatusFormBlockProps {
   isSuccess: boolean;
 }
 const StatusFormBlock = ({ isSuccess }: StatusFormBlockProps) => {
-  const { modal, updateState }: IAppContext = useContext(
-    AppContext
-  ) as IAppContext;
-
-  const onCloseForm = () => {
-    updateState &&
-      updateState({
-        modal: {
-          ...modal,
-          open: false,
-        },
-      });
-    document.body.style.overflowY = 'auto';
-  };
   return (
-    <div className="py-4 px-[40px] lg:py-8 lg:px-[54px] h-screen">
+    <div className="py-4 px-[40px] h-screen lg:py-8 lg:px-[54px]">
       <div className="flex-col justify-center items-center lg:mt-[241px]">
         <div className="flex justify-center">
           <ImageElement

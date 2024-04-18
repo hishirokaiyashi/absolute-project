@@ -19,7 +19,7 @@ const WorkBlock = () => {
   const handleRemoveCursorTile = () => {
     setHoverItemCursor('');
   };
-  const myRef = useRef<HTMLDivElement[]>([]);
+  const imageStickyRef = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
     const options: IntersectionObserverInit = {
       root: null,
@@ -27,31 +27,35 @@ const WorkBlock = () => {
       threshold: 0.5, // 0.5 means when half of the element is visible
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         const id = entry.target.id;
-        // Tìm chỉ số của phần tử trong mảng myRef bằng cách tìm vị trí của ID
-        const index = myRef.current.findIndex((ref) => ref.id === id);
+        // Find the index of the element in the imageStickyRef array by finding the position of the ID.
+        const index = imageStickyRef.current.findIndex(ref => ref.id === id);
 
         if (entry.isIntersecting) {
-          myRef.current.forEach((ref, idx) => {
+          imageStickyRef.current.forEach((ref, idx) => {
             ref.setAttribute('data-active', (idx === index).toString());
           });
           setCurrentItemIndex(index + 1);
         } else {
-          // Kiểm tra nếu myRef.current[index] có data-active là true thì mới thực hiện đổi data-active
+          // Check if imageStickyRef.current[index] has data-active set to true before changing data-active.
           const isActive =
-            myRef.current[index].getAttribute('data-active') === 'true';
+            imageStickyRef.current[index].getAttribute('data-active') ===
+            'true';
           if (isActive) {
             setCurrentItemIndex(index);
 
-            // Đặt thuộc tính data-active của myRef.current[index] thành false
-            myRef.current[index].setAttribute('data-active', 'false');
+            // Set the data-active attribute of imageStickyRef.current[index] to false
+            imageStickyRef.current[index].setAttribute('data-active', 'false');
 
-            // Kiểm tra nếu index - 1 không là số âm và myRef.current[index - 1] tồn tại
-            if (index > 0 && myRef.current[index - 1]) {
-              // Đặt thuộc tính data-active của myRef.current[index - 1] thành true
-              myRef.current[index - 1].setAttribute('data-active', 'true');
+            // Check if index - 1 is not a negative number and imageStickyRef.current[index - 1] exists.
+            if (index > 0 && imageStickyRef.current[index - 1]) {
+              // Set the data-active attribute of imageStickyRef.current[index - 1] to true.
+              imageStickyRef.current[index - 1].setAttribute(
+                'data-active',
+                'true',
+              );
             } else {
               setCurrentItemIndex(1);
             }
@@ -59,23 +63,21 @@ const WorkBlock = () => {
         }
       });
     }, options);
-    myRef.current.forEach((el) => {
+    imageStickyRef.current.forEach(el => {
       if (el) {
         observer.observe(el);
       }
     });
-    console.log('aa');
 
     // Clean up
     return () => {
-      myRef.current.forEach((el) => {
+      imageStickyRef.current.forEach(el => {
         if (el) {
           observer.unobserve(el);
         }
       });
-      // observer.disconnect();
     };
-  }, [myRef]);
+  }, [imageStickyRef]);
 
   return (
     <Section
@@ -93,26 +95,24 @@ const WorkBlock = () => {
           return (
             <div
               key={index}
-              ref={(ref) => {
+              ref={ref => {
                 if (ref) {
-                  myRef.current[index] = ref;
+                  imageStickyRef.current[index] = ref;
                 }
               }}
-              onMouseEnter={() => handleAddCursorTile(`ImageSticky-${index}`)}
+              onMouseEnter={() =>
+                handleAddCursorTile(`image-sticky-id-${index}`)
+              }
               onMouseLeave={() => handleRemoveCursorTile()}
-              id={`ImageSticky-${index}`}
-              className="sticky top-0 left-0 z-0 cursor-pointer "
+              id={`image-sticky-id-${index}`}
+              className="sticky top-0 left-0 z-0 cursor-pointer"
             >
               <div className="relative h-screen ">
-                <ImageElement
-                  src={el.src}
-                  fill={true}
-                  // className="h-screen "
-                />
+                <ImageElement src={el.src} fill={true} />
               </div>
               <CustomCursor
-                SelectedId={`ImageSticky-${index}`}
-                isHovering={hoverItemCursor == `ImageSticky-${index}`}
+                SelectedId={`image-sticky-id-${index}`}
+                isHovering={hoverItemCursor == `image-sticky-id-${index}`}
                 cursorTitle={el.cursorTitle}
                 subTitle={el.subTitle}
               />
@@ -136,8 +136,7 @@ const WorkBlock = () => {
                 <ButtonWithIcon
                   icon={
                     <div className="flex items-center">
-                      {/* Check */}
-                      <div className="w-[16px] h-[16px] border-2 border-secondary rounded-full right-4 top-1/2 transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></div>
+                      <span className="w-[16px] h-[16px] ml-4 border-2 border-secondary rounded-full transition-colors group-hover:bg-secondary"></span>
                     </div>
                   }
                 >
@@ -152,15 +151,3 @@ const WorkBlock = () => {
   );
 };
 export default WorkBlock;
-{
-  /* <div className="absolute z-10 flex items-end text-[14px] lg:items-start justify-between lg:justify-end w-full top-4 p-4 lg:p-0 bottom-0 lg:top-[24px] lg:right-[24px]">
-                <div className="lg:hidden">
-                  <Typography as="span">
-                    {`${el.cursorTitle} ${el.subTitle}`}
-                  </Typography>
-                </div>
-                <Typography as="span">{`${index + 1}/${
-                  ListElementSticky.length
-                }`}</Typography>
-              </div> */
-}

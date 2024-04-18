@@ -4,10 +4,7 @@ import { ButtonWithIcon } from '@/components/atoms/commons/Button';
 import InputCheckboxElement from '@/components/atoms/commons/InputCheckboxElement';
 import InputTextElement from '@/components/atoms/commons/InputTextElement';
 import TextAreaElement from '@/components/atoms/commons/TextAreaElement';
-import AppContext from '@/context/appContext';
-import { IAppContext } from '@/models/appInterface';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useContext } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 interface InputTextElementProps {
   handleSubmitForm: (checkSubmit: boolean) => void;
@@ -18,21 +15,8 @@ const InputTextElements = ({ handleSubmitForm }: InputTextElementProps) => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({
-    resolver: zodResolver(UserSchema), // Apply the zodResolver
+    resolver: zodResolver(UserSchema),
   });
-  // const { modal, updateState }: IAppContext = useContext(
-  //   AppContext
-  // ) as IAppContext;
-
-  // const handleSubmmitForm = (data: boolean) => {
-  //   updateState &&
-  //     updateState({
-  //       modal: {
-  //         ...modal,
-  //         isSubmitted: data,
-  //       },
-  //     });
-  // };
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
     try {
       handleSubmitForm(true);
@@ -95,7 +79,7 @@ const InputTextElements = ({ handleSubmitForm }: InputTextElementProps) => {
           type="submit"
           icon={
             <div className="flex items-center">
-              <span className="w-[16px] h-[16px] border-2 border-secondary block rounded-full right-4 top-1/2 transition-colors group-hover:bg-secondary lg:inline-block lg:relative lg:top-0 lg:right-0 ml-4"></span>
+              <span className="w-[16px] h-[16px] ml-4 border-2 border-secondary rounded-full transition-colors group-hover:bg-secondary"></span>
             </div>
           }
         >

@@ -35,15 +35,14 @@ export interface RichTextProps {
 type TSizeClassNames = Record<SizeOptions, string>;
 
 const sizeClassNames: TSizeClassNames = {
-  h1:
-    'text-88x leading-[85%]  font-black lg:text-[25vw] text-center text-secondary font-cameraPlain',
+  h1: 'text-88x leading-[85%]  font-black lg:text-[25vw] text-center text-secondary font-cameraPlain',
   h2: 'text-60x lg:text-200x text-center text-secondary',
   h3: 'text-secondary text-40x lg:text-120x text-center ',
   h4: 'text-24x lg:text-80x text-center text-secondary font-spykDisplay',
   small: 'text-base',
   strong: 'text-lg font-medium',
   label: '',
-  button: 'text-24x lg:text-40x text-secondary f font-normal',
+  button: 'text-24x lg:text-40x text-secondary font-normal',
   paragraph:
     'text-base font-normal text-secondary text-14x lg:text-18x font-diaType',
   span: 'text-base lg:text-2xl font-cameraPlain text-secondary',
